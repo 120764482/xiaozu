@@ -22,7 +22,7 @@ angular.module('lytappApp')
 		})
 		
 		//QQ验证
-		 var reg=/^\d{5,10}$/; 
+		 var reg=/^\d{5,10}$/;    
 		$("#user_QQ").blur(function() {
 
 			var passValuee = $('#user_QQ').val();
