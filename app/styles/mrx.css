@@ -1,17 +1,17 @@
 html,
 body,
 div,
-span,
+span,    
 p,
 h1,
 h2,
 h3,
-b,
-i,
+b,  
+i,   
 a,
 em,
 form,
-img,
+img,   
 ul,
 li,
 dl,
@@ -109,7 +109,7 @@ img {
 	width: 1088px;
 	height: 620px;
 	float: left;
-	/*background: pink;*/
+	position: relative;
 }
 .m_main-top{
 	width: 1088px;
@@ -119,7 +119,6 @@ img {
 	color: #089525;
 	text-indent: 20px;
 	background: #f6f6f6;
-/*	margin-bottom: 20px;*/
 }
 .m_main_bottom{
 	width: 1088px;
@@ -127,7 +126,6 @@ img {
 .m_main_bottom-top{
 	width: 1088px;
 	height: 30px;
-/*	margin-bottom: 5px;*/
 }
 .m_main_bottom-top-left{
 	width: 200px;
@@ -135,7 +133,7 @@ img {
 }
 .m_main_bottom-top-left a{
 	padding-left: 20px;
-	line-height: 30px;
+	line-height:30px;
 	float: left;
 	color: #000;
 	cursor: pointer;
@@ -151,11 +149,13 @@ width: 16px;
 height: 16px;
 margin-top: 6px;
 }
-.m_main_bottom-top-right{
-	width: 400px;
+.m_main_bottom-top-right{ 
+	/*270*/
+	width: 360px;     
 	line-height: 30px;
 	float: right;
-	margin-right: 20px;
+/*	margin-right: 20px;*/
+	background: padding-box;
 }
 .m_main_bottom-top-right select{
 	float: left;
@@ -167,11 +167,12 @@ margin-top: 6px;
 	height: 26px;
 	float: left;
 	margin-left: 10px;
+	text-indent: 10px;
 }
 .sousu{
 	width: 100px;
-	line-height: 25px;
-	float: left;
+	line-height: 30px;
+	float:left;
 	margin-left: 10px;
 }
 .sousu img{
@@ -205,13 +206,150 @@ margin-top: 6px;
 }
 .m_main_bottom table tr input{
 vertical-align: middle;
-height: 23px;
+
 }
 .m_main_bottom table tr td{
 	border: 1px solid #c4ecc9; 
 }
-.m_main_footer{
-	width: 1088px;
-	height: 40px;
+/*上一页下一页*/
+ .div2{
+	width: 1068px;
+	height: 36px;
+	background: ;
+	border: 1px solid #93e497;
 	background: #f5f5f5;
+	margin-top: 2px;
+	margin-left: 20px;
+	overflow: hidden;
+}
+ .div2 .p1{
+	float: left;
+	color: #fd0003;
+	font-size: 12px;
+	margin-left: 12px;
+	line-height: 36px;
+}
+ .div2 .page{
+	float: right;
+	margin-right: 68px;
+	width: 200px;
+	height: 36px;
+}
+.div2 .page p{
+	color: #000;
+	font-size: 14px;
+	line-height: 36px;
+	float: left;
+}
+ .div2 .page p:nth-child(1){
+	margin-left: 3px;
+}
+ .div2 .page p:nth-child(2){
+	margin-left: 10px;
+}
+.div2 .page p:nth-child(3){
+	margin-left: 10px;
+}
+
+
+
+
+ /*分配*/
+.fp{
+	width: 330px;
+	height: 330px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-top: -150px;
+	margin-left: -150px;
+/*	border: 2px solid  #bbe0db;*/
+  background: #bbe0db;
+	border-radius: 5px;
+}
+.fp-header{
+	width: 330px;
+	height: 30px;
+}
+.fp-header div:nth-child(1){
+	width: 60px;
+	margin-left: 20px;
+	text-align: center;
+	line-height: 20px;
+	color:#fff;
+	margin-top: 10px;
+	font-size: 14px;
+	float: left;
+}
+.fp-header a:nth-child(2){
+	width: 40px;
+	float: right;
+	font-size: 16px;
+	text-align: center;
+	line-height: 20px;
+	color: #fff;
+	background: #7dd7e2;
+	margin-right: 5px;
+	border:2px solid  #d8d8d8;
+border-bottom-right-radius: 5px;
+}
+.fp-header a:hover{
+	background: #b6343c;
+}
+.fp-main{
+	width: 320px;
+	height: 295px;
+	margin-left: 5px;
+	margin-right: 5px;
+	background: #fff;
+	border: 1px solid #ccc;
+}
+.fp-main-top{
+	width: 318px;
+	height: 34px;
+	background: #f4f4f4;
+	border-bottom: 1px solid #d8d8d8;
+}
+.fp-main-top img{
+	display: block;
+	float: left;
+	margin: 7px 3px 10px 15px;
+}
+.fp-main-top p{
+	float: left;
+	font-size: 15px;
+	margin-top: 3px;
+}
+.fp-main-bottom{
+	width:290px;
+	height: 50px;
+	margin: 10px 14px;
+	border: 1px solid #d8d8d8;
+}
+.fp-main-bottom .hezi{
+	width:280px;
+	height: 35px;
+	margin: 7px 4px;
+	border: 1px solid #d8d8d8;
+}
+.hezi-div{
+	width: 110px;
+	height: 33px;
+	float: left;
+	font-size: 14px;
+	text-align: center;
+	line-height: 35px;  
+	border-right: 1px solid #d8d8d8;
+	background: #f2f2f2;
+}
+.hezi-select{
+	width: 100px;
+	height: 25px;
+	float: left;
+	margin-top: 4px;
+	margin-left: 10px;
+}
+.hezi-select select{
+	width: 100px;
+	height: 25px;
 }
