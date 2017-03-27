@@ -236,4 +236,4 @@ angular.module('lytappApp')
 		for(var i =1;i<13;i++){
 			$scope.oyeays.push(i)
 		}
-	}]); 
+	}]);
