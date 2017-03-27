@@ -8,12 +8,16 @@
 			<img src="../images/del.png"/>
 		    <p>添加</p>
 		</a>
+		<a ng-click="deltel()">
+			<img src="../images/del1.png"/>
+		    <p>删除</p>
+		</a>
 		<div class="ri">
 			<input type="text" placeholder="手机号查询" name="" id="" value="" ng-focus="ofocus()" ng-blur="oblur()" ng-model="oPhone" />
 			<a ng-click="cha()">
 				<img src="../images/cha.png"/>
 				<span>查询</span>
-			</a>
+			</a>     
 		</div>
 	</div>
 	<main>
@@ -94,7 +98,19 @@
 										<p>联系日期</p>
 									</div>
 									<div>
-										<input type="text" name="" id="" value="" ng-model="user_lianxiriqi" />
+										<!--<input type="text" name="" id="" value="" ng-model="user_lianxiriqi" />-->
+										<select style="float: left;margin-top: 10px;display: block;" ng-model="oninas">
+											<option value="">--请选择--</option>
+											<option value="{{nians}}" ng-repeat="nians in odatas">{{nians}}年</option>
+										</select>
+										<select style="float: left;margin-top: 10px;display: block;" ng-model="yues">
+											<option value="">--请选择--</option>
+											<option value="{{yue}}" ng-repeat="yue in oyeays">{{yue}}月</option>
+										</select>
+										<select style="float: left;margin-top: 10px;display: block;" ng-model="ris">
+											<option value="">--请选择--</option>
+											<option value="{{ri}}" ng-repeat="ri in oris">{{ri}}</option>
+										</select>
 									</div>
 								</li>
 								<li>
@@ -118,6 +134,14 @@
 										<p>移动电话</p>
 									</div>
 									<div><input type="text" name="" id="" value="" ng-model="jobphone" /></div>
+								</li>
+								<li>
+									<div>
+										<p>类型</p>
+									</div>
+									<div>  
+										<input type="radio" ng-value="lianxijilu" ng-model="leixing" name="selectState" />联系记录
+									</div>
 								</li>
 							</ul>
 						</div>

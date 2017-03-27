@@ -14,7 +14,7 @@
 	font-weight: bold;
 	font-size: 17px;
 	text-indent: 20px;
-	padding-top: 4px;
+	padding-top: 4px; 
 }
 .lBox .div1{
 	width: 1088px;
@@ -65,7 +65,7 @@
 .lBox main{
 	width: 1088px;
 }
-.lBox main table tr td{
+.lBox main table tr td{      
 	text-align: center;
 	color: #00388b;
 	font-weight: bold;
@@ -109,6 +109,7 @@
 	font-size: 14px;
 	line-height: 36px;
 	float: left;
+	cursor: pointer;
 }
 .lBox .div2 .page p:nth-child(1){
 	margin-left: 3px;
@@ -122,7 +123,7 @@
 .lBox .cang{
 	-display: none;
 	width: 796px;
-	height: 453px;
+	height: 491px;
 	border-radius: 5px;
 	background: rgba(118,169,190,.7);
 	border: 1px solid #fff;
@@ -155,7 +156,7 @@
 }
 .lBox .cang .bottom{
 	width: 787px;
-	height: 404px;
+	height: 446px;
 	background: #fff;
 	margin-top: 2px;
 	
@@ -186,7 +187,7 @@
 }
 .lBox .cang .main{
 	width: 746px;
-	height: 359px;
+	height: 402px;
 	border: 1px solid #d7d7d7;
 	/*position: absolute;
 	left: 50%;
@@ -196,7 +197,7 @@
 }
 .lBox .cang .main .divv1{
    width: 737px;
-   height: 346px;
+   height: 386px;
    border: 1px solid #d7d7d7;
    margin-left: 4px;
    margin-top: 4px;	
@@ -215,16 +216,22 @@
 }
 .lBox .cang .main .divB .divBL{
 	float: left;
-	width: 368px;
-	height: 320px;
+	width: 559px;
+	height: 360px;
 	border-right: 1px solid #d7d7d7;
 }
 .lBox .cang .main .divB .divBL ul li{
 	list-style: none;
-	width: 368px;
+	width: 559px;
 	height: 40px;
 	border-bottom: 1px solid #d7d7d7;
 	line-height: 40px;
+}
+.lBox .cang .main .divB .divBL ul li div:nth-child(2) input{
+	float: left;
+}
+.lBox .cang .main .divB .divBL ul li div:nth-child(2) p{
+	float: left;
 }
 .lBox .cang .main .divB .divBL ul li div:nth-child(1){
 	float: left;
@@ -240,7 +247,7 @@
 }
 .lBox .cang .main .divB .divBL ul li div:nth-child(2){
 	float: left;
-	width: 267px;
+	width: 410px;
 	height: 40px;
 	overflow: hidden;
 }
@@ -256,6 +263,13 @@
 	width: 12px;
 	height: 12px;
 	margin-top: 10px;
+	float: none;
+}
+.lBox .cang .main .divB .divBL ul li:nth-child(6) div:nth-child(2) input{
+	width: 12px;
+	height: 12px;
+	margin-top: 10px;
+	float: none;
 }
 .lBox .cang .main .divB .divBL ul li div:nth-child(2) img{
 	margin-left: 5px;
@@ -268,13 +282,14 @@
 }
 .lBox .cang .main .divB .divBR{
 	float: left;
-	width: 368px;
-	height: 320px;
+	width: 177px;
+	height: 360px;
+	/*background: red;*/
 }
 .lBox .cang .main .divB .divBR div{
 	width: 100px;
 	height: 95px;
-	margin-left: 135px;
+	margin-left: 47px;
 	margin-top: 15px;
 	background: url(../images/7.jpg) no-repeat;
 	background-size: cover;

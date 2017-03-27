@@ -7,15 +7,16 @@
  * # MainCtrl
  * Controller of the lytappApp
  */
-angular.module('lytappApp')
+angular.module('lytappApp')     
 	.controller('lzjlCtrl', ["$scope","$http", function($scope,$http) {
+		$scope.lianxijilu = '联系记录';
 		$scope.pageNow=1;
 		$scope.page=5;
 		$scope.totalPage=0;
 		//遍历
 		 $scope.arr = [];
 		 $http({
-			url: "http://47.88.16.225:411/kehu/",
+			url: 'http://47.88.16.225:411/kehu/?{"shi":"联系记录"}',
 			method: "get",
 			data: {}
 		}).then(function(data) {
@@ -50,13 +51,13 @@ angular.module('lytappApp')
 				method: "delete",
 				
 			}).then(function(data) {
-				alert("删除成功")
 				$scope.arr.splice($index,1);
 				window.location.reload()
 			})
-		}
+		} 
 		 //保存
 		 $scope.baocunr = function() {
+		 	var arys = $scope.oninas+ '年' +$scope.yues+'月'+$scope.ris+"日"
 			$http({
 				url: "http://47.88.16.225:411/kehu/?uid=" + localStorage.uid,
 				method: "post",
@@ -65,10 +66,11 @@ angular.module('lytappApp')
 					"password": localStorage.passWord,
 					"duiyingkehu": $scope.duiyingkehu,
 					"lianxineirong": $scope.user_neirong,
-					"lianxiriqi":  $scope.user_lianxiriqi,
+					"lianxiriqi":  arys,
 					"lianxiren":  $scope.user_lianxiren,
 					"zhixingren":  $scope.zhixingren,
-					"tel": $scope.jobphone
+					"tel": $scope.jobphone,
+					"shi":$scope.lianxijilu
 				}
 			}).then(function(data) {
 				window.location.reload()
@@ -144,7 +146,6 @@ angular.module('lytappApp')
 			
 		}
 		$scope.next=function(){
-			
 			if($scope.pageNow>=$scope.totalPage){
 				$scope.pageNow=$scope.totalPage
 			}else{
@@ -161,6 +162,22 @@ angular.module('lytappApp')
 				
 			}
 			
+		}
+		
+		//		年月
+		$scope.odatas = [];
+		for(var i =1989;i<2001;i++){
+			$scope.odatas.push(i)
+		}
+		
+		$scope.oyeays = [];
+		for(var i =1;i<13;i++){
+			$scope.oyeays.push(i)
+		}
+		
+		$scope.oris = [];
+		for(var i =1;i<31;i++){
+			$scope.oris.push(i)
 		}
 		 
 	}]);

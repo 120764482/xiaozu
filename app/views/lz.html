@@ -2,7 +2,7 @@
 <div ng-controller="lzCtrl" class="lBox">
 
 	<header>
-		联系人管理
+		联系人管理   
 	</header>
 	<div class="div1">
 		<a ng-click="add()">
@@ -15,8 +15,8 @@
 				<img src="../images/cha.png" />
 				<span>查询</span>
 			</a>
-		</div>
-	</div>
+		</div> 
+	</div>  
 	<main>
 		<table border="1" cellspacing="0" cellpadding="1" bordercolor="#d8d7d3">
 			<tr height="35" bgcolor="#98ea98">
@@ -82,6 +82,7 @@
 									</div>
 									<div>
 										<input type="text" name="" id="" value="" ng-model="duiyingkehu" />
+										<p></p>
 									</div>
 								</li>
 								<li>
@@ -90,9 +91,9 @@
 									</div>
 									<div>
 										<input type="text" name="" id="" value="" ng-model="user_name" />
+										<p></p>
 									</div>
 								</li>
-								
 								<li>
 									<div>
 										<p>性别</p>
@@ -103,16 +104,16 @@
 										<!--<p style="float: left;">{{state}}</p>-->
 									</div>
 								</li>
-								<li>
+								<li> 
 									<div>
 										<p>生日</p>
 									</div>
-									<div>
-										<select style="float: left;" ng-model="oninas">
+									<div style="overflow: hidden;">
+										<select style="float: left;margin-top: 10px;display: block;" ng-model="oninas">
 											<option value="">--请选择--</option>
 											<option value="{{nians}}" ng-repeat="nians in odatas">{{nians}}年</option>
 										</select>
-										<select style="float: left;" ng-model="yues">
+										<select style="float: left;margin-top: 10px;display: block;" ng-model="yues">
 											<option value="">--请选择--</option>
 											<option value="{{yue}}" ng-repeat="yue in oyeays">{{yue}}月</option>
 										</select>
@@ -124,6 +125,7 @@
 									</div>
 									<div>
 										<input type="text" name="" id="" value="" ng-model="zhiwei" />
+										<p></p>
 									</div>
 								</li>
 								<li>
@@ -131,32 +133,32 @@
 										<p>类型</p>
 									</div>
 									<div>
-										<input type="text" name="" id="" value="" ng-model="leixing" />
-										<!--<p style="float: left;">{{state}}</p>-->
+										<input type="radio" ng-value="lianxiren" ng-model="leixing" name="selectState" />联系人
+										<input type="radio" ng-value="kehu" ng-model="leixing" name="selectState" />客户
 									</div>
 								</li>
 								<li>
 									<div>
 										<p>工作电话</p>
 									</div>
-									<div><input type="text" name="" id="" value="" ng-model="jobphone" /></div>
+									<div><input type="text" name="" id="phone" value="" ng-model="jobphone" /><p id="oPhone"></p></div>
 								</li>
 								<li>
 									<div>
 										<p>邮件地址</p>
 									</div>
-									<div><input type="text" name="" id="" value="" ng-model="emialaddr" /></div>
+									<div><input type="text" name="" id="youxiang" value="" ng-model="emialaddr" /><p id="pp"></p></div>
 								</li>
 								<li>
 									<div>
 										<p>QQ</p>
 									</div>
-									<div><input type="text" name="" id="" value="" ng-model="user_QQ" /></div>
+									<div><input type="text" name="" id="user_QQ" value="" ng-model="user_QQ" /><p id="qq"></p></div>
 								</li>
 							</ul>
 						</div>
 						<div class="divBR">
-							<div></div>
+							<!--<div></div>-->
 						</div>
 					</div>
 				</div>

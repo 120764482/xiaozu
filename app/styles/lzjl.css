@@ -16,7 +16,7 @@
 	text-indent: 20px;
 	padding-top: 4px;
 }
-.lBox .div1{
+.lBox .div1{       
 	width: 1088px;
 	height: 28px;
 	border-bottom: 1px solid #d8d7d3;
@@ -109,6 +109,7 @@
 	font-size: 14px;
 	line-height: 36px;
 	float: left;
+	cursor: pointer;
 }
 .lBox .div2 .page p:nth-child(1){
 	margin-left: 3px;
@@ -122,7 +123,7 @@
 .lBox .cang{
 	-display: none;
 	width: 796px;
-	height: 380px;
+	height: 405px;
 	border-radius: 5px;
 	background: rgba(118,169,190,.7);
 	border: 1px solid #fff;
@@ -145,6 +146,8 @@
 	width: 31px;
 	height: 17px;
 	background: -webkit-linear-gradient(top, #90e4ef, #50bbcf);
+	background: -moz-linear-gradient(top, #90e4ef, #50bbcf);
+	background: -o-linear-gradient(top, #90e4ef, #50bbcf);
 	position: absolute;
 	top: 0;
 	right: 5px;
@@ -155,10 +158,9 @@
 }
 .lBox .cang .bottom{
 	width: 787px;
-	height: 336px;
+	height: 360px;
 	background: #fff;
 	margin-top: 2px;
-	
 	position: absolute;
 	left: 50%;
 	margin-left: -393.5px;
@@ -186,17 +188,14 @@
 }
 .lBox .cang .main{
 	width: 746px;
-	height: 278px;
+	height: 318px;
 	border: 1px solid #d7d7d7;
-	/*position: absolute;
-	left: 50%;
-	margin-left: -373px;*/
 	margin-left: 20px;
 	margin-top: -21px;
 }
 .lBox .cang .main .divv1{
    width: 738px;
-   height: 266px;
+   height: 306px;
    border: 1px solid #d7d7d7;
    margin-left: 4px;
    margin-top: 4px;	
@@ -251,6 +250,12 @@
 	margin-left: 5px;
 	margin-top: 5px;
 	outline: none;
+}
+.lBox .cang .main .divB .divBL ul li:nth-child(7) div:nth-child(2) input{
+	width: 12px;
+	height: 12px;
+	margin-top: 10px;
+	float: none;
 }
 /*.lBox .cang .main .divB .divBL ul li:nth-child(3) div:nth-child(2) input{
 	width: 12px;
