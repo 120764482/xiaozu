@@ -10,32 +10,30 @@
 					<div class="yrkh_b_l_top">
 						<i>预定义查询:</i>
 						<div class="yrkh_b_l_top_s">
-							<p style="width: 60px;"><input type="radio" name="kehu" id="" value="all" />全部</p>
-							<p><input type="radio" name="kehu" id="" value="" />我的客户</p>
-							<p><input type="radio" name="kehu" id="" value="" />团队客户</p>
+							<p style="width: 60px;"><input type="radio" name="kehu" id="" ng-click="xuezhe()" />全部</p>
+							<p><input type="radio" name="kehu" id="" ng-click="xuezhe()" />个人客户</p>
+							<span class="tu">
+									<img src="../images/yrk10.png" alt="添加客户" ng-click="bianxie()" />
+							</span>
 						</div>
 					</div>
 				</div>
 				<div class="yrkh_b_r">
 					<div class="yrkh_b_r_m">
 						<select id="ss" class="yrkh_b_r_x">
-							<option value="1" selected>搜索</option>
+							<option value="1" >搜索</option>
 							<option value="2">客户阶段</option>
 							<option value="3">名称</option>
 							<option value="4">营销阶段</option>
 							<option value="5">客户类型</option>
 							<option value="6">标签</option>
 						<select>
-						<select id="cs" class="yrkh_b_r_g">
+						<select id="cs" class="yrkh_b_r_g" ng-model="yrkneirong" ng-focus="ofocus()" ng-blur="oblur()">
 							
 						</select>
 					</div>
 					<div class="yrkh_b_r_q">
 						<p ng-click="btn()"><span><img src="../images/yrk7.png"/></span>查询</p>
-					</div>
-					<div class="yrkh_b_r_w">
-						<span><img src="../images/yrk1.png"/></span>
-						<span><img src="../images/yrk8.png"/></span>
 					</div>
 					
 				</div>
@@ -65,15 +63,19 @@
 							<th>对应客户</th>
 							<th>联系内容</th>
 							<th>联系人</th>
+							<th>标签</th>
 						</tr>
 						<tr ng-repeat="xh in arr">
-							<td><input type="checkbox" ng-checked="iCkeck" ng-click="inetCk()"/></td>
+							<td>
+								<input type="checkbox" ng-checked="iCkeck" ng-click="inetCk()"/></td>
 							<td>
 								<span class="tu">
-								  <img src="../images/yrk9.png" ng-click="xiugai()" />
+								  <img src="../images/yrk9.png" ng-click="xiugai(xh.id)" alt="修改客户" />
 								</span>
+								
 								<span class="tu">
-									<img src="../images/yrk10.png" ng-click="bianxie()" /></span><span class="tu"><img src="../images/yrk11.png" ng-click="gonghai(xh.id)"/></span></td>
+									<img src="../images/yrk11.png" ng-click="gonghai(xh.id, xh)" alt="放入公海" /></span>
+							</td>
 							<td>{{xh.jieduan}}</td>
 							<td>{{xh.suozaigongsi}}</td>
 							<td>{{xh.yingxiaojieduan}}</td>
@@ -90,6 +92,7 @@
 							<td>{{xh.duiyingkehu}}</td>
 							<td>{{xh.lianxineirong}}</td>
 							<td>{{xh.lianxiren}}</td>
+							<td>{{xh.biaoqian}}</td>
 						</tr>
 					</table>
 				</div>
@@ -119,17 +122,24 @@
 			</div>
 			<div class="yrksmallx_j_b">
 				<div class="yrktx_j_b">
-					<p>客户阶段：<input type="text" ng-model="jieduan" /></p>
-					<p>所在公司：<input type="text" ng-model="suozaigongsi" /></p>
-					<p>营销阶段：<input type="text" ng-model="yingxiaojieduan" /></p>
-					<p>客户类型：<input type="text" ng-model="leixing" /></p>
-					<p>姓名：<input type="text" ng-model="xingming" /></p>
-					<p>性别：<input type="text" ng-model="xingbie" /></p>
-					<p>电话：<input type="text" ng-model="dianhua" /></p>
-					<p>执行人：<input type="text" ng-model="zhixingren" /></p>
-					<p>QQ：<input type="text" ng-model="qq" /></p>
-					<p>邮箱：<input type="text" ng-model="email" /></p>
-					<p>联系日期：<input type="text" ng-model="lianxiriqi" /></p>
+					<p><span>客户阶段：</span><input type="text" ng-model="yrkdg.jieduan" /></p>
+					<p><span>所在公司：</span><input type="text" ng-model="yrkdg.suozaigongsi" /></p>
+					<p><span>营销阶段：</span><input type="text" ng-model="yrkdg.yingxiaojieduan" /></p>
+					<p><span>客户类型：</span><input type="text" ng-model="yrkdg.leixing" /></p>
+					<p><span>姓名：</span><input type="text" ng-model="yrkdg.xingming" /></p>
+					<p><span>性别：</span><input type="text" ng-model="yrkdg.xingbie" /></p>
+					<p><span>电话：</span><input type="text" ng-model="yrkdg.dianhua" /></p>
+					<p><span>执行人：</span><input type="text" ng-model="yrkdg.zhixingren" /></p>
+					<p><span>QQ：</span><input type="text" ng-model="yrkdg.qq" /></p>
+					<p><span>邮箱：</span><input type="text" ng-model="yrkdg.email" /></p>
+					<p><span>联系日期：</span><input type="text" ng-model="yrkdg.lianxiriqi" /></p>
+					<p><span>生日：</span><input type="text" ng-model="yrkdg.shengri" /></p>
+					<p><span>职位：</span><input type="text" ng-model="yrkdg.zhiwei" /></p>
+					<p><span>对应客户：</span><input type="text" ng-model="yrkdg.duiyingkehu" /></p>
+					<p><span>联系内容：</span><input type="text" ng-model="yrkdg.lianxineirong" /></p>
+					<p><span>联系人：</span><input type="text" ng-model="yrkdg.lianxiren" /></p>
+					<p><span>日期：</span><input type="text" ng-model="yrkdg.data" /></p>
+					<p><span>标签：</span><input type="text" ng-model="yrkdg.biaoqian" /></p>
 				</div>
 				
 			</div>
@@ -139,79 +149,44 @@
 		</div>
 		
 		
-		
-		
 		<!--编写-->
-		
-		<div class="cang" ng-show="rise" id="dd">
-			<p class="p1">添加联系记录</p>
-			<div class="dingwei" ng-click="dell()">x</div>
-			<div class="bottom">
-				<div class="header">
-					<a ng-click="baocunr()">
-						<img src="../images/baocun.png" />
-						<p>保存</p>
-					</a>
+		<div class="yrksmallx" ng-show="rise" ng-click="kehu1()">
+			<div class="yrktx_j_t">
+				<div class="yrktx_j_l">
+					<span>添加客户端</span>
 				</div>
-				<div class="main">
-					<div class="divv1">
-						<div class="head">客户信息</div>
-						<div class="divB">
-							<div class="divBL">
-								<ul>
-									<li>
-										<div>
-											<p>对应客户</p>
-										</div>
-										<div>
-											<input type="text" name="" id="" value="" ng-model="duiyingkehu" />
-										</div>
-									</li>
-									<li>
-										<div>
-											<p>联系内容</p>
-										</div>
-										<div>
-											<input type="text" name="" id="" value="" ng-model="user_neirong" />
-										</div>
-									</li>
-									<li>
-										<div>
-											<p>联系日期</p>
-										</div>
-										<div>
-											<input type="text" name="" id="" value="" ng-model="user_lianxiriqi" />
-										</div>
-									</li>
-									<li>
-										<div>
-											<p>联系人</p>
-										</div>
-										<div>
-											<input type="text" name="" id="" value="" ng-model="user_lianxiren" />
-										</div>
-									</li>
-									<li>
-										<div>
-											<p>执行人</p>
-										</div>
-										<div>
-											<input type="text" name="" id="" value="" ng-model="zhixingren" />
-										</div>
-									</li>
-									<li>
-										<div>
-											<p>移动电话</p>
-										</div>
-										<div><input type="text" name="" id="" value="" ng-model="jobphone" /></div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
+				<div class="yrktx_j_r">
+					<img src="../images/xxx.jpg" ng-click="dell()"/>
 				</div>
 			</div>
-       </div>
+			<div class="yrksmallx_j_b">
+				<div class="yrktx_j_b">
+					<p><span>客户阶段：</span><input type="text" ng-model="jieduan" /></p>
+					<p><span>所在公司：</span><input type="text" ng-model="suozaigongsi" /></p>
+					<p><span>营销阶段：</span><input type="text" ng-model="yingxiaojieduan" /></p>
+					<p><span>客户类型：</span><input type="text" ng-model="leixing" /></p>
+					<p><span>姓名：</span><input type="text" ng-model="xingming" /></p>
+					<p><span>性别：</span><input type="text" ng-model="xingbie" /></p>
+					<p><span>电话：</span><input type="text" ng-model="dianhua" id="dianhua" /><d>x</d></p>
+					<p><span>执行人：</span><input type="text" ng-model="zhixingren" /></p>
+					<p><span>QQ：</span><input type="text" ng-model="qq" id="qq" /><d>x</d></p>
+					<p><span>邮箱：</span><input type="text" ng-model="email" id="email" /><d>x</d></p>
+					<p><span>联系日期：</span><input type="text" ng-model="lianxiriqi" /></p>
+					<p><span>生日：</span><input type="text" ng-model="shengri" /></p>
+					<p><span>职位：</span><input type="text" ng-model="zhiwei" /></p>
+					<p><span>对应客户：</span><input type="text" ng-model="duiyingkehu" /></p>
+					<p><span>联系内容：</span><input type="text" ng-model="lianxineirong" /></p>
+					<p><span>联系人：</span><input type="text" ng-model="lianxiren" /></p>
+					<p><span>日期：</span><input type="text" ng-model="data" /></p>
+					<p><span>标签：</span><input type="text" ng-model="biaoqian" /></p>
+				</div>
+				
+			</div>
+			<div class="yrktx_j_b_q">
+				<button ng-click="baocunr()">添加</button>
+			</div>
+		</div>
+		
        
 	</div>
 	

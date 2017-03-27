@@ -9,7 +9,7 @@
  */
 angular.module('lytappApp')
   .controller('yrkCtrl',["$scope","$http","myServe", function ($scope,$http,myServe) {
-//	var user = myServe.username;
+
 	var user = localStorage.user;
   	console.log(user);
   	$scope.pageNow=1;
@@ -30,7 +30,7 @@ angular.module('lytappApp')
     var arr1=[
             ['客户名称、简称、电话、联系人'],
             [''],
-	        ['初步接触','揣摩客户需要','处理异议'],
+	        ['初期','中期','处理异议'],
 	        ['个人客户','团队客户'],
 	        ['']
 	];
@@ -47,7 +47,32 @@ angular.module('lytappApp')
 	
 	//查询
 	$scope.btn=function(){
-		
+		$http({
+			url: "http://47.88.16.225:411/kehu?tel=" + $scope.yrkneirong,
+			method: "get"
+		}).then(function(data) {
+			$scope.arr = data.data
+		})
+	}
+	var timers = null;
+	$scope.ofocus = function(){
+		timers = setInterval(function(){
+			if($scope.yrkneirong == ''){
+				$http({
+					url: "http://47.88.16.225:411/kehu/",
+					method: "get",
+					data: {}
+				}).then(function(data) {
+					$scope.tiaoo = data.data.length;
+					$scope.arr = data.data;
+					$scope.arr = $scope.arr.slice(($scope.pageNow - 1) * $scope.page, $scope.pageNow * $scope.page);
+					clearInterval(timers)
+				})
+			}
+		},500)
+	}
+	$scope.oblur = function(){
+		clearInterval(timers)
 	}
 	
 	//全选
@@ -64,35 +89,57 @@ angular.module('lytappApp')
 	//操作
 		//修改
 			$scope.bbbb=false;
-			$scope.xiugai=function(){
-				$scope.bbbb=true;
-			}
-			$scope.guan1=function(){
-				$scope.bbbb=false;
-			}
+			$scope.xiugai=function(e){
+			//获取id	
+			$http({
+				url:"http://47.88.16.225:411/kehu/"+e,
+				method:"get",
+				data:{}
+			}).then(function(e){
+				console.log(e)
+				$scope.yrkdg=e.data;
+			},function(){
+				alert("请求失败")
+			})			
+			$scope.bbbb=true;
 			//确认修改
 			$scope.queren1=function(){
 				$http({
-					url:"http://47.88.16.225:411/kehu/?uid="+localStorage.uid,
-					method:"post",
+					url:"http://47.88.16.225:411/kehu/"+e,
+					method:"put",
 					data:{
-						"jieduan":$scope.jieduan,
-						"suozaigongsi":$scope.suozaigongsi,
-						"yingxiaojieduan":$scope.yingxiaojieduan,
-						"leixing":$scope.leixing,
-						"xingming":$scope.xingming,
-						"xingbie":$scope.xingbie,
-						"dianhua":$scope.dianhua,
-						"zhixingren":$scope.zhixingren,
-						"qq":$scope.qq,
-						"email":$scope.email,
-						"lianxiriqi":$scope.lianxiriqi
+						"jieduan":$scope.yrkdg.jieduan,
+						"suozaigongsi":$scope.yrkdg.suozaigongsi,
+						"yingxiaojieduan":$scope.yrkdg.yingxiaojieduan,
+						"leixing":$scope.yrkdg.leixing,
+						"xingming":$scope.yrkdg.xingming,
+						"xingbie":$scope.yrkdg.xingbie,
+						"dianhua":$scope.yrkdg.dianhua,
+						"zhixingren":$scope.yrkdg.zhixingren,
+						"qq":$scope.yrkdg.qq,
+						"email":$scope.yrkdg.email,
+						"lianxiriqi":$scope.yrkdg.lianxiriqi,
+						"shengri":$scope.yrkdg.shengri,
+						"zhiwei":$scope.yrkdg.zhiwei,
+						"duiyingkehu":$scope.yrkdg.duiyingkehu,
+						"lianxineirong":$scope.yrkdg.lianxineirong,
+						"lianxiren":$scope.yrkdg.lianxiren,
+						"data":$scope.yrkdg.data,
+						"biaoqian":$scope.yrkdg.biaoqian
 					}
 				}).then(function(data){
-					
+					window.location.reload();
 				})
 				$scope.bbbb=false;
 			}
+			
+			}
+			
+			$scope.guan1=function(){
+				$scope.bbbb=false;
+			}
+			
+			
 		
 		//编写
 			$scope.rise = false;
@@ -108,14 +155,24 @@ angular.module('lytappApp')
 						url: "http://47.88.16.225:411/kehu/?uid=" + localStorage.uid,
 						method: "post",
 						data: {
-							"username": localStorage.userName,
-							"password": localStorage.passWord,
-							"duiyingkehu": $scope.duiyingkehu,
-							"lianxineirong": $scope.user_neirong,
-							"lianxiriqi":  $scope.user_lianxiriqi,
-							"lianxiren":  $scope.user_lianxiren,
-							"zhixingren":  $scope.zhixingren,
-							"tel": $scope.jobphone
+							"jieduan":$scope.jieduan,
+							"suozaigongsi":$scope.suozaigongsi,
+							"yingxiaojieduan":$scope.yingxiaojieduan,
+							"leixing":$scope.leixing,
+							"xingming":$scope.xingming,
+							"xingbie":$scope.xingbie,
+							"dianhua":$scope.dianhua,
+							"zhixingren":$scope.zhixingren,
+							"qq":$scope.qq,
+							"email":$scope.email,
+							"lianxiriqi":$scope.lianxiriqi,
+							"shengri":$scope.shengri,
+							"zhiwei":$scope.zhiwei,
+							"duiyingkehu":$scope.duiyingkehu,
+							"lianxineirong":$scope.lianxineirong,
+							"lianxiren":$scope.lianxiren,
+							"data":$scope.data,
+							"biaoqian":$scope.biaoqian
 						}
 					}).then(function(data) {
 						window.location.reload()
@@ -123,35 +180,69 @@ angular.module('lytappApp')
 					$scope.rise = false;
 				}
 		
-		
+	//正则
+		//手机验证
+		var dianhua = /^((\+)?86|((\+)?86)?)0?1[3458]\d{9}$/; 
+		$("#dianhua").blur(function() {
+			if($(this).val().match(dianhua)) {
+				$(this).next().html('手机号正确').css("color", "green");
+			} else {
+				$(this).next().html('请输入正确格式').css("color", "red");
+			}
+		})
+		//qq验证
+		var qq = /^[1-9][0-9]{4,14}/;
+		$("#qq").blur(function() {
+			if($(this).val().match(qq)) {
+				$(this).next().html('QQ号正确').css("color", "green");
+			} else {
+				$(this).next().html('请输入正确格式').css("color", "red");
+			}
+		})
+		//邮箱验证
+		var email = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+		$("#email").blur(function() {
+			if($(this).val().match(email)) {
+				$(this).next().html('邮箱正确').css("color", "green");
+			} else {
+				$(this).next().html('请输入正确格式').css("color", "red");
+			}
+		})
 		
 	
 	// 个人客户
-//	$http({
-//		url:"http://47.88.16.225:411/kehu/",
-//		method:"get",
-//		data:{}
-//	}).then(function(data){
-//		var cusArr = [];
-//		var data2 = data.data;
-//		for(var i=0; i<data2.length; i++){
-//			if(data2[i].zhixingren == user){
-//		      cusArr.push(data2[i]);
-//		    }
-//		}
-//		$scope.arr = cusArr;
-//		console.log($scope.arr);
-//	})
-//	
+	$http({
+		url:"http://47.88.16.225:411/kehu/",
+		method:"get",
+		data:{}
+	}).then(function(data){
+		var cusArr = [];
+		var data2 = data.data;
+		for(var i=0; i<data2.length; i++){
+			if(data2[i].zhixingren == user){
+		      cusArr.push(data2[i]);
+		    }
+		}
+		$scope.arr = cusArr;
+		console.log($scope.arr);
+	})
+	
 	//放入公海
-	$scope.gonghai = function(id){
-		alert(id);
+	$scope.gonghai = function(id, obj){
 		$http({
 			url:"http://47.88.16.225:411/kehu/" + id,
-			type:"put",
-			data: {"zhixingren": "public"}
+			method:"put",
+			data: {
+				"duiyingkehu": obj.duiyingkehu,
+				"lianxineirong": obj.lianxineirong,
+				"lianxiriqi":  obj.lianxiriqi,
+				"lianxiren":  obj.lianxiren,
+				"zhixingren":  "public",
+				"tel": obj.tel
+			}
 		}).then(function(req){
 			console.log(req);
+			window.location.reload();
 		},function(){
 			console.log("修改失败！");
 		})
@@ -161,7 +252,7 @@ angular.module('lytappApp')
 	//分页
 	$http({
 		url:"http://47.88.16.225:411/kehu",
-		type:"get"
+		method:"get"
 	}).then(function(req){
 		$scope.totalPage=Math.ceil(req.data.length/$scope.page);
 	},function(){

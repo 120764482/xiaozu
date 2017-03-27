@@ -209,21 +209,7 @@ img {
 	float: left;
 	margin: 1px;
 }
-.yrkh_b_r_w{
-	width: 48px;
-	height: 28px;
-	margin-left: 3px;
-	float: right;
-}
-.yrkh_b_r_w span{
-	width: 20px;
-	height: 20px;
-	float: left;
-	margin-top: 4px;
-}
-.yrkh_b_r_w span img{
-	margin: 2px;
-}
+
 
 .yrkfooter{
 	width: 100%;
@@ -346,6 +332,7 @@ img {
 .yrktx_j_b{
 	width: 98%;
 	height: 270px;
+	overflow-y: auto;
 	margin: 0 auto;
 }
 .yrktx_j_b p{
@@ -355,11 +342,18 @@ img {
 	height: 30px;
 	margin: 5px;
 }
-.yrktx_j_b p input{
-	float: right;
-	margin-right: 50px;
+.yrktx_j_b p span{
+	float: left;
+	width: 76px;
 }
-
+.yrktx_j_b p input{
+	float: left;
+}
+.yrktx_j_b p d{
+	width: 50px;
+	height: 30px;
+	float: right;
+}
 .yrktx_j_b_q{
 	width: 100%;
 	display: inline;
@@ -437,6 +431,7 @@ img {
 .cang .main{
 	width: 746px;
 	height: 278px;
+	overflow-y: auto;
 	border: 1px solid #d7d7d7;
 	margin-left: 20px;
 	margin-top: -21px;
@@ -677,7 +672,6 @@ img {
 
 
 
-/*删除*/
 
 
 
@@ -692,8 +686,6 @@ img {
 
 
 
-
-/*修改*/
 
 
 
