@@ -4,29 +4,23 @@
 	<div class="m_main-top">公海客户</div>	
 	<div class="m_main_bottom">	
 	<div class="m_main_bottom-top">
-	<!--<a>
-		<img src="../images/m_sc.jpg">
-		<span>删除</span>
-	</a>-->
 	<div class="m_main_bottom-top-left">
 		<a>
 	<img src="../images/m_pl.jpg">
-	<span id="fp">批量分配</span>
+	<span  ng-click="fp()">批量分配</span>
 	</a>
-	<a>
-	<img src="../images/m_pl.jpg">
-	<span id="dele">删除领取</span>
-	</a> 
+	
 	</div>
 	<div class="m_main_bottom-top-right">
 		<select >
-			<option value="">客户名称</option>
-			<option value="">助记简称</option>
-			<option value="">客户编号</option>
-			<option value="">客户阶段</option>
-		</select>
-		<input type="text" value=""/>
-		<div class="sousu"> 
+		<option>客户阶段</option>
+		<option>客户类型</option>  
+		<option>客户阶段</option>
+		<option>标签</option>
+		<option>名称</option>
+		</select>    
+		<input type="text"   value="" ng-focus="focus()" ng-blur="oblur()" ng-model="omingcheng"/>  
+		<div class="sousu" ng-click="cha"> 
 			<img src="../images/m_so.jpg">
 		   <a>查询</a>
 		</div>
@@ -35,122 +29,79 @@
 <table class="m_main_table" border="1" cellpadding="0" cellspacing="0" bordercolor="#d8d7d3">
 			<tr height="35px" bgcolor="#98ea98">
 				<td width="45">
-				<input type="checkbox" ng-model="selectAll" ng-click="all(selectAll)">
+				<input type="checkbox"  ng-click="checkAll()">
 				</td>
-				<td width="129">名称</td>
+				<td width="129">客户阶段</td>
 				<td width="129">营销阶段</td>
 				<td width="129">客户类型</td>
-				<td width="129">客户阶段</td>
+				<td width="129">所在公司</td>
 				<td width="129">标签</td>
 				<td width="129">添加时间</td>
 				<td width="129">所有人</td>
 				<td width="129" color="#fff">操作</td>
+			</tr>           
+			<tr height="35px" ng-repeat="emp in arr"> 
+				<td width="45">
+					<input type="checkbox" ng-checked="iCkeck" index="{{aa}}" ng-click="cli()"/>
+					
+				</td>
+				<td width="129">{{emp.kehujieduan}}</td>
+				<td width="129">{{emp.yingxiaojieduan}}</td>
+				<td width="129">{{emp.kehuleixing}}</td>
+				<td width="129">{{emp.suozaigongsi}}</td>
+				<td width="129">{{emp.biaoqian}}</td>
+				<td width="129">{{emp.tianjiashijian}}</td>
+				<td width="129">{{emp.suoyouren}}</td>
+				<td width="129">{{emp.caozuo}}
+				<span class="tu">
+				<img src="../images/yrk11.png" ng-click="kehu(emp)"/>
+				</span>
+				<img src="../images/m_pl.jpg">
+				<span ng-click="del(emp)">删除</span>
+				</td>
+				
+			
+			
 			</tr>
 			
-			<tr height="35px">
-				<td width="45"><input type="checkbox" /></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129">删除</td>
-			</tr>
-			<tr height="35px">
-				<td width="45"><input type="checkbox" /></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-			</tr>
-			<tr height="35px">
-				<td width="45"><input type="checkbox" /></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-			</tr>
-			<tr height="35px">
-				<td width="45"><input type="checkbox" /></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-			</tr>
-			<tr height="35px">
-				<td width="45"><input type="checkbox" /></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-			</tr>
-			<tr height="35px">
-				<td width="45"><input type="checkbox" /></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-			</tr>
-			<tr height="35px">
-				<td width="45"><input type="checkbox" /></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-			</tr>
-			<tr height="35px">
-				<td width="45"><input type="checkbox" /></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-			</tr>
-			<tr height="35px">
-				<td width="45"><input type="checkbox" /></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-				<td width="129"></td>
-			</tr>
 	</table>
 	</div>
-		<div  class="m_main_footer"> 
-		<span>1</span>
-		<div class="f"></div>
+		<div class="div2">
+		<p class="p1">{{pageNow}}</p>
+		<div class="page">
+			<p ng-click="prev()">上一页</p>
+			<p ng-click="next()">下一页</p>
+			<p>共:<span style="color: red;">{{tiao}}</span>条</p>
+		</div>
+	</div>
+
 	</div>	
+<!--批量分配-->	
+	<div class="fp" ng-show="gb"><!--ng-show="gb"-->
+		<div class="fp-header">
+			<div>批量分配</div>
+			<a ng-click="close()">X</a>
+		</div>
+		<div class="fp-main">
+			<div class="fp-main-top">
+			<img src="../images/baocun.png">	
+			<p ng-click="chu()">保存</p>
+		</div>	
+		<div class="fp-main-bottom">
+			<div class="hezi">
+		
+			<div class="hezi-div">选择负责人</div>
+			<div class="hezi-select">
+				<select>
+				<option>李艳天</opction>
+				<option>梁震</option>
+				<option>马瑞雪</option>
+				<option>王欣</option>
+				<option>闫锐锟</option>
+				</select>
+			</div>
+		</div>
+		</div>
+		</div>
 	</div>
 </div>
