@@ -21,7 +21,7 @@ angular.module('lytappApp')
 		$scope.iCkeck=!$scope.iCkeck;
 	}
 	$scope.cli=function(){
-		$scope.aa=!$scope.aa;
+		$scope.aa=!$scope.aa;   
 	}
 //批量分配
 	   	
