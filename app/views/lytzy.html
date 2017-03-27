@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="../styles/lytzy.css" />
+<div ng-controller="lytzyCtrl">
+	<div class="lyt-zy-header">
+		<!--<logo></logo>-->
+		<a ng-click="tc()">退出登录</a>
+	</div>
+	<div class="main">
+		<div class="main-left">
+			<ul>
+				<li><a ui-sref=".yrk">客户管理</a></li>
+				<li><a ui-sref=".mrx">公海客户</a></li>
+				<li><a ui-sref=".lz">联系人员</a></li>
+				<li><a ui-sref=".lzjl">联系记录</a></li>
+				<li><a ui-sref=".wx">记事本</a></li>
+			</ul>
+		</div>
+		<div ui-view class="main-right"></div>
+	</div>
+</div>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>	
+		<link rel="stylesheet" href="../styles/jsb.css" /> 
+	</head>
+	<body>
+		
+		<div ng-controller="wxaddCtrl" class="wxbox">		
+	<header>
+		记事本
+	</header>
+	<div class="wxdiv1">
+		<a ng-click="add()">
+			<img src="../images/del.png" />
+			<p>添加</p>
+		</a>
+		
+			
+			<!--<a ng-click="deldel(a.id,index)">
+				<img src="../images/jian.jpg" />
+				<span>删除</span>
+			</a>-->
+		
+	</div>
+	<wxmain>
+		<table border="1" cellspacing="0" cellpadding="1" bordercolor="#d8d7d3">
+			<tr bgcolor="#98ea98">
+				<td width="60">
+				<input type="checkbox" name="" id="" value="" ng-click='checkAll()' ng-model='checkall' />
+				</td>
+				        <td>操作</td>
+						<td>对应那个客户</td>
+						<td>日期</td>
+						<td>创建人</td>
+						<td>内容</td>
+			</tr>
+			<tr ng-repeat="wx in arry">
+				<td>
+			<input type="checkbox" name="" id="" value="" ng-checked="iCkeck" ng-click="inetCk($index)" />
+				</td>
+				
+				<td>
+			<p ng-click="bjis(a,$index)">修改</p>						
+			<p ng-click="deldel(wx.id,$index)">删除</p>
+				</td>							
+						
+				<td>{{wx.duiyingkehu}}</td>
+				<td>{{wx.data}}</td>	
+				<td>{{wx.chuangjianren}}</td>
+				<td>{{wx.reirong}}</td>	
+			</tr>
+		</table>
+	</main>
+	
+	
+	
+	
+	<div class="wxdiv2">
+		<p class="p1">1</p>
+		<div class="page">
+			<p>上一页</p>
+			<p>下一页</p>
+			<p>共:2条</p>
+		</div>
+	</div>	
+	
+	
+	
+	
+	
+	<div class="wxzhezhaobc" ng-show="rise" >
+		<div class="zzct">
+		<p>保存记事本</p>	
+		<img src="../images/xxx.jpg"/ ng-click="del()">
+		</div>
+		
+		
+		<div class="wxzzb">
+			<div class="wxzzb_top">
+				<div ng-click="baocun()">
+					<img src="../images/bao.jpg">
+					<p>保存</p>
+				</div>
+				<div>
+					<img src="../images/jia.jpg">
+					<p>保存继续</p>
+				</div>
+				
+			</div>
+			
+			
+			
+			<div class="wxjsb">
+				<top>记事本</top>
+				<div class="wxnr">
+					客&nbsp;&nbsp;&nbsp;户:<input type="text" ng-model="kehu"/><br />
+					日&nbsp;&nbsp;&nbsp;期:<input type="date" ng-model="dataa"/><br />
+					创建人:<input type="text" ng-model="ren" /><br />
+					内容:<textarea style="width: 200px; height: 150px;margin-top: 10px;" ng-model="nei"></textarea>
+					
+				</div>
+
+			</div>
+
+		</div>	
+
+		</div>	
+	
+	
+	
+	
+	
+				
+	<div class="wxzhezhaobj" ng-show="bianji">
+		<div class="zzct">
+		<p>编辑记事本</p>	
+		<img src="../images/xxx.jpg"/ ng-click="dell()">
+		</div>
+		
+		
+		<div class="wxzzb">
+			<div class="wxzzb_top">
+				<div ng-click="bc()">
+					<img src="../images/bao.jpg">
+					<p>保存</p>
+				</div>
+				<div ng-click="shanchu()">
+					<img src="../images/jian.jpg">
+					<p>删除</p>
+				</div>
+				
+			</div>
+			
+			
+			
+			<div class="wxjsb">
+				<top>记事本</top>
+				<div class="wxnr">
+					客&nbsp;&nbsp;&nbsp;户:<input type="text" ng-model="abc.kehu"/><br />
+					日&nbsp;&nbsp;&nbsp;期:<input type="date" ng-model="abc.data"/><br />
+					创建人:<input type="text" ng-model="abc.ren"/><br />
+					内容:<textarea style="width: 200px; height: 150px;margin-top: 10px;" ng-model="abc.nei"></textarea>
+					
+				</div>
+				
+				
+			</div>
+			
+			
+			
+		</div>	
+			
+			
+			
+				
+		</div>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

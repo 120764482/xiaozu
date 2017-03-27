@@ -1,0 +1,161 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 100%;
+	height: 100%;
+	
+}
+.wxbox{
+	width: 600px;
+	height: 400px;
+	margin: 50px auto;
+	border: 1px solid #CCCCCC;
+	
+	
+}
+.wxbox input{
+	text-indent: 0.3rem;
+}
+.wxtop{
+	width: 600px;
+	height: 30px;
+	line-height: 30px;
+	background: #E4E4E4;
+	text-align: center;
+	display: block;
+	font-size: 16px;
+}
+header{
+	width: 600px;
+	
+}
+.wxhead{
+	width: 600px;
+	margin: auto;
+	font-size: 16px;
+	//line-height: 0.7rem;
+}
+
+.wxhead .one{
+	width: 600px;
+	height: 30px;
+	line-height: 30px;
+	display: flex;
+	margin-top: 20px;
+}
+.wxhead .one div{
+	flex: 1;
+	
+		
+}
+.one div p{
+	float: left;
+}
+
+.one div input{
+	float: left;
+}
+.one div:nth-child(2){
+	margin-left: 40px;
+}
+
+.wxhead .two {
+	display: flex;
+	margin-top: 15px;
+	line-height: 30px;
+}
+.wxhead .two div{
+	float: left;
+}
+
+.wxhead .two div:nth-child(1) input:nth-child(1),.wxhead .two div:nth-child(1) input:nth-child(2){
+	
+	width: 30px;
+	
+}
+.wxhead .two div:nth-child(2){
+	margin-left: 132px;
+	
+}
+.wxhead .two div:nth-child(2) p{
+	float: left;
+	
+}
+.wxhead .two div:nth-child(2) input{
+	width: 200px;
+	
+	float: left;
+}
+.wxhead .nan{
+	width: 15px;
+	height:15px;
+}
+.wxhead .nv{
+	width: 15px;
+	height: 15px;
+	
+}
+.wxhead input{	
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	
+}
+.fore{
+	width: 600px;
+	display: flex;
+	
+}
+.fore div{
+	width: 600px;
+	flex: 1;
+}
+.fore div:nth-child(2){
+	margin-left: 40px;
+	
+}
+.fore div select{
+	width:200px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 15px;
+}
+.wxconter{
+	width: 600px;
+	
+	
+}
+.wxconter top{
+	width: 600px;
+	height: 30px;
+	line-height: 30px;
+	background: #E4E4E4;
+	text-align: center;
+	display: block;
+	margin-top: 20px;
+}
+.wxconter .six{
+	width: 600px;
+	margin-top: 15px;
+	display: flex;
+}
+.wxconter .six div{
+	flex:1;
+}
+.wxconter .six div:nth-child(2){
+	margin-left: 110px;
+}
+.wxconter .six div p{
+	float: left;
+}
+.wxconter .six div input{
+	float: left;
+	
+}
+.wxconter input{
+	width: 170px;
+	height: 30px;
+	line-height: 30px;
+}

@@ -1,0 +1,418 @@
+html,
+body,
+div,
+span,
+p,
+h1,
+h2,
+h3,
+b,
+i,
+a,
+em,
+input,
+form,
+img,
+ul,
+li,
+dl,
+dt {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	font-style: normal;
+	box-sizing: border-box;
+}
+
+ul,
+li,
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+
+img {
+	display: inline-block;
+}
+
+.clear {
+	display: block;
+	*zoom: 1;
+}
+
+.clear:after {
+	content: "";
+	display: block;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	clear: both;
+}
+
+@-webkit-keyframes load2 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes load2 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+.load {
+	border-radius: 50%;
+	font-size: 11px;
+	text-indent: -99999em;
+	margin: 20px auto;
+	position: relative;
+	width: 8em;
+	height: 8em;
+	box-shadow: inset 0 0 0 1em red;
+}
+
+.load:before,
+.load:after {
+	border-radius: 50%;
+	position: absolute;
+	content: '';
+	width: 4.2em;
+	height: 8.2em;
+	background: #fff;
+	border-radius: 0;
+}
+
+.load:before {
+	border-radius: 8.2em 0 0 8.2em;
+	top: -0.1em;
+	left: -0.1em;
+	-webkit-transform-origin: 4.2em 4.1em;
+	transform-origin: 4.2em 4.1em;
+	-webkit-animation: load2 2s infinite ease 1.5s;
+	animation: load2 2s infinite ease 1.5s;
+}
+
+.load:after {
+	border-radius: 0 8.2em 8.2em 0;
+	top: -0.1em;
+	left: 4.1em;
+	-webkit-transform-origin: 0 4.1em;
+	transform-origin: 0 4.1em;
+	-webkit-animation: load2 2s infinite ease;
+	animation: load2 2s infinite ease;
+}
+
+.lyt-wrap {
+	width: 100%;
+	height: 730px;
+	background: url(../images/lyt-1.jpg);
+}
+
+.lyt-content {
+	width: 1003px;
+	height: 730px;
+	margin: 0 auto;
+}
+
+.lyt-xx {
+	width: 500px;
+	height: 106px;
+	margin-left: 111px;
+	color: #FFFFFF;
+	font-weight: bold;
+
+}
+.lyt-xx>span{
+	font-size: 32px;
+	padding-top: 30px;
+	-webkit-box-reflect: below 1px linear-gradient(transparent,transparent 50%,rgba(0,0,0,.3)); 
+}
+.lyt-content>div{
+	width: 1001px;
+	height: 618px;
+	border: 1px solid #8cc399;
+	background: url(../images/lyt-2.jpg);
+}
+.lyt-content>div>p{
+	width: 1001px;
+	height: 70px;
+	overflow: hidden;
+}
+.lyt-content>div>p>a{
+	width: 190px;
+	height: 70px;
+	line-height: 70px;
+	color: #217611;
+	font-size: 18px;
+	font-weight:bold;
+	float: left;
+	margin-left: 50px;
+}
+.lyt-content>div>p>c{
+	display: block;
+	width: 400px;
+	height: 70px;
+	line-height: 70px;
+	color: #f5092d;
+	float: left;
+	font-size: 24px;
+	margin-left: 140px;
+}
+.lyt-address{
+	width: 500px;
+	height: 50px;
+	margin-left: 48px;
+	overflow: hidden;
+}
+.lyt-address>a{
+	color: #f80322;
+	float: left;
+}
+.lyt-address>m{
+	float: left;
+	margin-left: 2px;
+}
+.lyt-address>input{
+	float: left;
+	width: 226px;
+	height: 25px;
+	border: 1px solid #dfe3e4;
+	border-top: 1px solid #abafae;
+	margin-left: 14px;
+}
+.lyt-address>d{
+	float: left;
+	margin-left: 32px;
+	color: #9aa297;
+}
+.lyt-contact{
+	width: 500px;
+	height: 50px;
+	margin-left: 62px;
+	overflow: hidden;
+}
+.lyt-contact>a{
+	color: #f80322;
+	float: left;
+}
+.lyt-contact>m{
+	float: left;
+	margin-left: 2px;
+}
+.lyt-contact>input{
+	float: left;
+	width: 226px;
+	height: 25px;
+	border: 1px solid #dfe3e4;
+	border-top: 1px solid #abafae;
+	margin-left: 14px;
+}
+.lyt-contact>d{
+	float: left;
+	margin-left: 32px;
+	color: #9aa297;
+}
+.lyt-email{
+	width: 800px;
+	height: 50px;
+	margin-left: 48px;
+	overflow: hidden;
+}
+.lyt-email>a{
+	color: #f80322;
+	float: left;
+}
+.lyt-email>m{
+	float: left;
+	margin-left: 2px;
+}
+.lyt-email>input{
+	float: left;
+	width: 226px;
+	height: 25px;
+	border: 1px solid #dfe3e4;
+	border-top: 1px solid #abafae;
+	margin-left: 14px;
+}
+.lyt-email>d{
+	float: left;
+	margin-left: 32px;
+	color: #9aa297;
+}
+.lyt-phone{
+	width: 800px;
+	height: 50px;
+	margin-left: 48px;
+	overflow: hidden;
+}
+.lyt-phone>a{
+	color: #f80322;
+	float: left;
+}
+.lyt-phone>m{
+	float: left;
+	margin-left: 2px;
+}
+.lyt-phone>input{
+	float: left;
+	width: 226px;
+	height: 25px;
+	border: 1px solid #dfe3e4;
+	border-top: 1px solid #abafae;
+	margin-left: 14px;
+}
+.lyt-phone>d{
+	float: left;
+	margin-left: 32px;
+	color: #9aa297;
+}
+.lyt-qq{
+	width: 800px;
+	height: 50px;
+	margin-left: 63px;
+	overflow: hidden;
+}
+.lyt-qq>a{
+	color: #f80322;
+	float: left;
+}
+.lyt-qq>m{
+	float: left;
+	margin-left: 2px;
+}
+.lyt-qq>input{
+	float: left;
+	width: 226px;
+	height: 25px;
+	border: 1px solid #dfe3e4;
+	border-top: 1px solid #abafae;
+	margin-left: 14px;
+}
+.lyt-qq>d{
+	float: left;
+	margin-left: 32px;
+	color: #9aa297;
+}
+.lyt-industry{
+	width: 800px;
+	height: 50px;
+	margin-left: 48px;
+	overflow: hidden;
+}
+.lyt-industry>a{
+	color: #f80322;
+	float: left;
+}
+.lyt-industry>m{
+	float: left;
+	margin-left: 2px;
+}
+.lyt-industry>input{
+	float: left;
+	width: 226px;
+	height: 25px;
+	border: 1px solid #dfe3e4;
+	border-top: 1px solid #abafae;
+	margin-left: 14px;
+}
+.lyt-industry>d{
+	float: left;
+	margin-left: 32px;
+	color: #9aa297;
+}
+.lyt-target{
+	width: 800px;
+	height: 50px;
+	margin-left: 48px;
+	overflow: hidden;
+}
+.lyt-target>a{
+	color: #f80322;
+	float: left;
+}
+.lyt-target>m{
+	float: left;
+	margin-left: 2px;
+}
+.lyt-target>input{
+	float: left;
+	width: 226px;
+	height: 25px;
+	border: 1px solid #dfe3e4;
+	border-top: 1px solid #abafae;
+	margin-left: 14px;
+}
+.lyt-target>d{
+	float: left;
+	margin-left: 32px;
+	color: #9aa297;
+}
+.lyt-time{
+	width: 800px;
+	height: 50px;
+	margin-left: 48px;
+	overflow: hidden;
+}
+.lyt-time>a{
+	color: #f80322;
+	float: left;
+}
+.lyt-time>m{
+	float: left;
+	margin-left: 2px;
+}
+.lyt-time>select{
+	float: left;
+	width: 226px;
+	height: 25px;
+	border: 1px solid #dfe3e4;
+	border-top: 1px solid #abafae;
+	margin-left: 14px;
+}
+.lyt-service{
+	width: 800px;
+	height: 50px;
+	margin-left: 125px;
+	overflow: hidden;
+}
+.lyt-service>input{
+	float: left;
+	width: 12px;
+	height: 12px;
+	border: 1px solid #929292;
+}
+.lyt-service>l{
+	float: left;
+	margin-left: 5px;
+}
+.lyt-service>a{
+	color: #51a5ff;
+	float: left;
+}
+.lyt-content>div>button{
+	width: 116px;
+	height: 36px;
+	background: #00c013;
+	color: #fff;
+	border: 1px solid #009c11;
+	border-radius: 5px;
+	margin-left: 120px;
+}
