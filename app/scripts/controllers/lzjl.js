@@ -40,7 +40,7 @@ angular.module('lytappApp')
 		  	if($scope.checkall){
 		  		$scope.iCkeck = true;
 		  	}else{
-		  		$scope.iCkeck = false;
+		  		$scope.iCkeck = false; 
 		  	}
 		  }
 		  
