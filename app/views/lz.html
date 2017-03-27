@@ -1,0 +1,169 @@
+<link rel="stylesheet" type="text/css" href="../styles/lz.css" />
+<div ng-controller="lzCtrl" class="lBox">
+
+	<header>
+		联系人管理   
+	</header>
+	<div class="div1">
+		<a ng-click="add()">
+			<img src="../images/del.png" />
+			<p>添加</p>
+		</a>
+		<div class="ri">
+			<input type="text" placeholder="手机号查询" name="" id="" value="" ng-focus="ofocus()" ng-blur="oblur()" ng-model="oPhone" />
+			<a ng-click="cha()">
+				<img src="../images/cha.png" />
+				<span>查询</span>
+			</a>
+		</div> 
+	</div>  
+	<main>
+		<table border="1" cellspacing="0" cellpadding="1" bordercolor="#d8d7d3">
+			<tr height="35" bgcolor="#98ea98">
+				<td width="60">
+					<input type="checkbox" name="" id="" value="" ng-click='checkAll()' ng-model='checkall' />
+				</td>
+				<td width="129">姓名</td>
+				<td width="129">性别</td>
+				<td width="129">生日</td>
+				<td width="129">职位</td>
+				<td width="129">工作电话</td>
+				<td width="129">QQ</td>
+				<td width="129">邮箱</td>
+				<td width="129">操作</td>
+			</tr>
+			<tr height="35" ng-repeat="item in ary">
+				<td width="60">
+					<input type="checkbox" name="" id="" value="" ng-checked="iCkeck" ng-click="inetCk($index)" />
+				</td>
+				<td width="129">{{item.xingming}}</td>
+				<td width="129">{{item.xingbie}}</td>
+				<td width="129">{{item.shengri}}</td>
+				<td width="129">{{item.zhiwei}}</td>
+				<td width="129">{{item.dianhua}}</td>
+				<td width="129">{{item.qq}}</td>
+				<td width="129">{{item.email}}</td>
+				<td width="129" style="overflow: hidden;">
+					<a ng-click="deler(item.id,$index)">
+						<img src="../images/del1.png" />
+					    <p>删除</p>
+					</a>
+				</td>
+			</tr>
+		</table>
+	</main>
+	<div class="div2">
+		<p class="p1">{{pageNow}}</p>
+		<div class="page">
+			<p ng-click="shang()">上一页</p>
+			<p ng-click="next()">下一页</p>
+			<p>共:<span style="color: red;">{{tiao}}</span>条</p>
+		</div>
+	</div>
+	<div class="cang" ng-show="rise">
+		<p class="p1">添加联系人</p>
+		<div class="dingwei" ng-click="del()">x</div>
+		<div class="bottom">
+			<div class="header">
+				<a ng-click="baocun()">
+					<img src="../images/baocun.png" />
+					<p>保存</p>
+				</a>
+			</div>
+			<div class="main">
+				<div class="divv1">
+					<div class="head">联系人</div>
+					<div class="divB">
+						<div class="divBL">
+							<ul>
+								<li>
+									<div>
+										<p>对应客户</p>
+									</div>
+									<div>
+										<input type="text" name="" id="" value="" ng-model="duiyingkehu" />
+										<p></p>
+									</div>
+								</li>
+								<li>
+									<div>
+										<p>姓名</p>
+									</div>
+									<div>
+										<input type="text" name="" id="" value="" ng-model="user_name" />
+										<p></p>
+									</div>
+								</li>
+								<li>
+									<div>
+										<p>性别</p>
+									</div>
+									<div>
+										<input type="radio" ng-value="nan" ng-model="state" name="selectState" />男
+										<input type="radio" ng-value="nv" ng-model="state" name="selectState" />女
+										<!--<p style="float: left;">{{state}}</p>-->
+									</div>
+								</li>
+								<li> 
+									<div>
+										<p>生日</p>
+									</div>
+									<div style="overflow: hidden;">
+										<select style="float: left;margin-top: 10px;display: block;" ng-model="oninas">
+											<option value="">--请选择--</option>
+											<option value="{{nians}}" ng-repeat="nians in odatas">{{nians}}年</option>
+										</select>
+										<select style="float: left;margin-top: 10px;display: block;" ng-model="yues">
+											<option value="">--请选择--</option>
+											<option value="{{yue}}" ng-repeat="yue in oyeays">{{yue}}月</option>
+										</select>
+									</div>
+								</li>
+								<li>
+									<div>
+										<p>职位</p>
+									</div>
+									<div>
+										<input type="text" name="" id="" value="" ng-model="zhiwei" />
+										<p></p>
+									</div>
+								</li>
+								<li>
+									<div>
+										<p>类型</p>
+									</div>
+									<div>
+										<input type="radio" ng-value="lianxiren" ng-model="leixing" name="selectState" />联系人
+										<input type="radio" ng-value="kehu" ng-model="leixing" name="selectState" />客户
+									</div>
+								</li>
+								<li>
+									<div>
+										<p>工作电话</p>
+									</div>
+									<div><input type="text" name="" id="phone" value="" ng-model="jobphone" /><p id="oPhone"></p></div>
+								</li>
+								<li>
+									<div>
+										<p>邮件地址</p>
+									</div>
+									<div><input type="text" name="" id="youxiang" value="" ng-model="emialaddr" /><p id="pp"></p></div>
+								</li>
+								<li>
+									<div>
+										<p>QQ</p>
+									</div>
+									<div><input type="text" name="" id="user_QQ" value="" ng-model="user_QQ" /><p id="qq"></p></div>
+								</li>
+							</ul>
+						</div>
+						<div class="divBR">
+							<!--<div></div>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

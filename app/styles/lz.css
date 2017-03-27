@@ -1,0 +1,434 @@
+*{margin: 0;padding: 0;}
+.lBox{
+	float: left;
+	width: 1088px;
+	height: 620px;
+	
+}
+
+.lBox header{
+	width: 1088px;
+	height: 30px;
+	background: -webkit-linear-gradient(top, #fff, #ededed);
+	color: #208e15;
+	font-weight: bold;
+	font-size: 17px;
+	text-indent: 20px;
+	padding-top: 4px; 
+}
+.lBox .div1{
+	width: 1088px;
+	height: 28px;
+	border-bottom: 1px solid #d8d7d3;
+	background: -webkit-linear-gradient(top, #fff, #ededed);
+	overflow: hidden;
+}
+.lBox .div1 img{
+	float: left;
+	margin-left: 17px;
+	margin-top: 7px;
+	cursor: pointer;
+}
+.lBox .div1 p{
+	color: #000;
+	font-size: 12px;
+	float: left;
+	margin-top: 7px;
+	cursor: pointer;
+}
+.lBox .div1 .ri{
+	float: right;
+	width: 300px;
+	height: 28px;
+}
+.lBox .div1 .ri input{
+	float: left;
+	width: 180px;
+	height: 25px;
+}
+.lBox .div1 .ri a{
+	display: block;
+	float: left;
+	margin-left: 3px;
+	cursor: pointer;
+}
+.lBox .div1 .ri a img{
+	float: left;
+}
+.lBox .div1 .ri a span{
+	display: block;
+	float: left;
+	margin-top: 3px;
+	color: #999;
+	font-size: 14px;
+}
+.lBox main{
+	width: 1088px;
+}
+.lBox main table tr td{      
+	text-align: center;
+	color: #00388b;
+	font-weight: bold;
+	font-size: 12px;
+}
+.lBox main table tr td img{
+	float: left;
+	margin-left: 38px;
+	margin-top: 3px;
+	cursor: pointer;
+}
+.lBox main table tr td p{
+	float: left;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.lBox .div2{
+	width: 1088px;
+	height: 36px;
+	background: ;
+	border: 1px solid #93e497;
+	background: #f5f5f5;
+	margin-top: 2px;
+	overflow: hidden;
+}
+.lBox .div2 .p1{
+	float: left;
+	color: #fd0003;
+	font-size: 12px;
+	margin-left: 12px;
+	line-height: 36px;
+}
+.lBox .div2 .page{
+	float: right;
+	margin-right: 68px;
+	width: 200px;
+	height: 36px;
+}
+.lBox .div2 .page p{
+	color: #000;
+	font-size: 14px;
+	line-height: 36px;
+	float: left;
+	cursor: pointer;
+}
+.lBox .div2 .page p:nth-child(1){
+	margin-left: 3px;
+}
+.lBox .div2 .page p:nth-child(2){
+	margin-left: 10px;
+}
+.lBox .div2 .page p:nth-child(3){
+	margin-left: 10px;
+}
+.lBox .cang{
+	-display: none;
+	width: 796px;
+	height: 491px;
+	border-radius: 5px;
+	background: rgba(118,169,190,.7);
+	border: 1px solid #fff;
+	/*position: absolute;
+	top: 100px;
+	left: 100px;*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -398px;
+	margin-top: -267px;
+}
+.lBox .cang .p1{
+	color: #fff;
+	font-size: 14px;
+	text-indent: 29px;
+	margin-top: 12px;
+}
+.lBox .dingwei{
+	width: 31px;
+	height: 17px;
+	background: -webkit-linear-gradient(top, #90e4ef, #50bbcf);
+	position: absolute;
+	top: 0;
+	right: 5px;
+	color: #fff;
+	text-align: center;
+	line-height: 17px;
+	cursor: pointer;
+}
+.lBox .cang .bottom{
+	width: 787px;
+	height: 446px;
+	background: #fff;
+	margin-top: 2px;
+	
+	position: absolute;
+	left: 50%;
+	margin-left: -393.5px;
+	border: 1px solid #d7d7d7;
+}
+.lBox .cang .bottom .header{
+	height: 28px;
+	border-bottom: 1px solid #d7d7d7;
+}
+.lBox .cang .bottom .header a{
+	cursor: pointer;
+	overflow: hidden;
+}
+.lBox .cang .bottom .header a img{
+	float: left;
+	margin-left: 17px;
+	margin-top: 8px;
+}
+.lBox .cang .bottom .header a p{
+	float: left;
+	color: #000;
+	font-size: 14px;
+	margin-left: 1px;
+	margin-top: 5px;
+}
+.lBox .cang .main{
+	width: 746px;
+	height: 402px;
+	border: 1px solid #d7d7d7;
+	/*position: absolute;
+	left: 50%;
+	margin-left: -373px;*/
+	margin-left: 20px;
+	margin-top: -21px;
+}
+.lBox .cang .main .divv1{
+   width: 737px;
+   height: 386px;
+   border: 1px solid #d7d7d7;
+   margin-left: 4px;
+   margin-top: 4px;	
+}
+.lBox .cang .main .divv1 .head{
+	width: 737px;
+	height: 25px;
+	background: #e4e4e4;
+    text-indent: 5px;
+    color: #000;
+    font-size: 16px;
+}
+.lBox .cang .main .divB{
+	width: 737px;
+	height: 350px;
+}
+.lBox .cang .main .divB .divBL{
+	float: left;
+	width: 559px;
+	height: 360px;
+	border-right: 1px solid #d7d7d7;
+}
+.lBox .cang .main .divB .divBL ul li{
+	list-style: none;
+	width: 559px;
+	height: 40px;
+	border-bottom: 1px solid #d7d7d7;
+	line-height: 40px;
+}
+.lBox .cang .main .divB .divBL ul li div:nth-child(2) input{
+	float: left;
+}
+.lBox .cang .main .divB .divBL ul li div:nth-child(2) p{
+	float: left;
+}
+.lBox .cang .main .divB .divBL ul li div:nth-child(1){
+	float: left;
+	width: 99px;
+	height: 40px;
+	border-right: 1px solid #d7d7d7;
+}
+.lBox .cang .main .divB .divBL ul li div:nth-child(1) p{
+	color: #000;
+	font-size: 14px;
+	float: right;
+	margin-right: 6px;
+}
+.lBox .cang .main .divB .divBL ul li div:nth-child(2){
+	float: left;
+	width: 410px;
+	height: 40px;
+	overflow: hidden;
+}
+.lBox .cang .main .divB .divBL ul li div:nth-child(2) input{
+	width: 260px;
+	height: 28px;
+	border: 1px solid #d7d7d7d;
+	margin-left: 5px;
+	margin-top: 5px;
+	outline: none;
+}
+.lBox .cang .main .divB .divBL ul li:nth-child(3) div:nth-child(2) input{
+	width: 12px;
+	height: 12px;
+	margin-top: 10px;
+	float: none;
+}
+.lBox .cang .main .divB .divBL ul li:nth-child(6) div:nth-child(2) input{
+	width: 12px;
+	height: 12px;
+	margin-top: 10px;
+	float: none;
+}
+.lBox .cang .main .divB .divBL ul li div:nth-child(2) img{
+	margin-left: 5px;
+	margin-top: 5px;
+}
+.lBox .cang .main .divB .divBL ul li select{
+	display: block;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+.lBox .cang .main .divB .divBR{
+	float: left;
+	width: 177px;
+	height: 360px;
+	/*background: red;*/
+}
+.lBox .cang .main .divB .divBR div{
+	width: 100px;
+	height: 95px;
+	margin-left: 47px;
+	margin-top: 15px;
+	background: url(../images/7.jpg) no-repeat;
+	background-size: cover;
+}
+.lBox .cang .main .divv{
+   width: 737px;
+   height: 236px;
+   border: 1px solid #d7d7d7;
+   margin-left: 4px;
+}
+.lBox .cang .main .divv .head{
+	width: 737px;
+	height: 25px;
+	background: #e4e4e4;
+    text-indent: 5px;
+    color: #000;
+    font-size: 16px;
+}
+.lBox .cang .main .divv .bot{
+	width: 737px;
+	height: 216px;
+}
+.lBox .cang .main .divv .bot ul li{
+	list-style: none;
+	width: 737px;
+	height: 30px;
+	border-bottom: 1px solid #d7d7d7;
+}
+.lBox .cang .main .divv .bot ul li div:nth-child(1){
+	float: left;
+	width: 99px;
+	height: 30px;
+	border-right: 1px solid #d7d7d7;
+}
+.lBox .cang .main .divv .bot ul li div:nth-child(1) p{
+	color: #000;
+	font-size: 14px;
+	float: right;
+	margin-right: 6px;
+	line-height: 30px;
+}
+.lBox .cang .main .divv .bot ul li div:nth-child(2){
+	float: left;
+	width: 267px;
+	height: 30px;
+	overflow: hidden;
+	border-right: 1px solid #d7d7d7;
+}
+.lBox .cang .main .divv .bot ul li div:nth-child(2) input{
+	width: 260px;
+	height: 18px;
+	border: 1px solid #d7d7d7d;
+	margin-left: 5px;
+	margin-top: 5px;
+	outline: none;
+}
+.lBox .cang .main .divv .bot ul li div:nth-child(3){
+	float: left;
+	width: 99px;
+	height: 30px;
+	border-right: 1px solid #d7d7d7;
+}
+.lBox .cang .main .divv .bot ul li div:nth-child(3) p{
+	color: #000;
+	font-size: 14px;
+	float: right;
+	margin-right: 6px;
+	line-height: 30px;
+}
+.lBox .cang .main .divv .bot ul li div:nth-child(4){
+	float: left;
+	width: 267px;
+	height: 30px;
+	overflow: hidden;
+}
+.lBox .cang .main .divv .bot ul li div:nth-child(4) input{
+	width: 260px;
+	height: 18px;
+	border: 1px solid #d7d7d7d;
+	margin-left: 5px;
+	margin-top: 5px;
+	outline: none;
+}
+.lBox .cang .main .divv .bot ul li:nth-child(6) div:nth-child(1){
+	float: left;
+	width: 99px;
+	height: 30px;
+	border-right: 1px solid #d7d7d7;
+}
+.lBox .cang .main .divv .bot ul li:nth-child(6) div:nth-child(1) p{
+	color: #000;
+	font-size: 14px;
+	float: right;
+	margin-right: 6px;
+	line-height: 30px;
+}
+.lBox .cang .main .divv .bot ul li:nth-child(6) div:nth-child(2){
+	float: left;
+	width: 636px;
+	height: 30px;
+	border-right:none;
+}
+.lBox .cang .main .divv .bot ul li:nth-child(6) div:nth-child(2) input{
+	width: 629px;
+	height: 18px;
+	border: 1px solid #d7d7d7d;
+	margin-left: 5px;
+	margin-top: 5px;
+	outline: none;
+}
+.lBox .cang .main .divv .bot ul li:nth-child(7) div:nth-child(1){
+	float: left;
+	width: 99px;
+	height: 30px;
+	border-right: 1px solid #d7d7d7;
+}
+.lBox .cang .main .divv .bot ul li:nth-child(7) div:nth-child(1) p{
+	color: #000;
+	font-size: 14px;
+	float: right;
+	margin-right: 6px;
+	line-height: 30px;
+}
+.lBox .cang .main .divv .bot ul li:nth-child(7) div:nth-child(2){
+	float: left;
+	width: 636px;
+	height: 30px;
+	border-right:none;
+}
+.lBox .cang .main .divv .bot ul li:nth-child(7) div:nth-child(2) input{
+	width: 629px;
+	height: 18px;
+	border: 1px solid #d7d7d7d;
+	margin-left: 5px;
+	margin-top: 5px;
+	outline: none;
+}
+
+
+
+
+
