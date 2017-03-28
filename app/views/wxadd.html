@@ -5,8 +5,7 @@
 		<title></title>	
 		<link rel="stylesheet" href="../styles/jsb.css" /> 
 	</head>
-	<body>
-		
+	<body>		
 		<div ng-controller="wxaddCtrl" class="wxbox">		
 	<header>
 		记事本
@@ -24,14 +23,14 @@
 			</a>-->
 		
 	</div>
-	<wxmain>
+	<div class="mainta">
 		<table border="1" cellspacing="0" cellpadding="1" bordercolor="#d8d7d3">
 			<tr bgcolor="#98ea98">
 				<td width="60">
 				<input type="checkbox" name="" id="" value="" ng-click='checkAll()' ng-model='checkall' />
 				</td>
 				        <td>操作</td>
-						<td>对应那个客户</td>
+						<td>对应客户</td>
 						<td>日期</td>
 						<td>创建人</td>
 						<td>内容</td>
@@ -53,7 +52,7 @@
 				<td>{{wx.reirong}}</td>	
 			</tr>
 		</table>
-	</main>
+</div>
 	
 	
 	
@@ -84,16 +83,13 @@
 					<img src="../images/bao.jpg">
 					<p>保存</p>
 				</div>
-				<div>
+				<!--<div>
 					<img src="../images/jia.jpg">
 					<p>保存继续</p>
-				</div>
+				</div>-->
 				
 			</div>
-			
-			
-			
-			
+	
 			
 			
 			<div class="wxjsb">
@@ -105,13 +101,8 @@
 					内容:<textarea style="width: 200px; height: 150px;margin-top: 10px;" ng-model="nei" ></textarea>
 					
 				</div>
-
-
 			</div>
-
 		</div>	
-
-
 		</div>	
 	
 	
@@ -121,7 +112,7 @@
 				
 	<div class="wxzhezhaobj" ng-show="bianji">
 		<div class="zzct">
-		<p>删除记事本</p>	
+		<p>修改记事本</p>	
 		<img src="../images/xxx.jpg"/ ng-click="dell()">
 		</div>
 		
@@ -132,10 +123,10 @@
 					<img src="../images/bao.jpg">
 					<p>保存</p>
 				</div>
-				<div ng-click="shanchu()">
+				<!--<div ng-click="shanchu()">
 					<img src="../images/jian.jpg">
 					<p>删除</p>
-				</div>
+				</div>-->
 				
 			</div>
 			
@@ -150,14 +141,8 @@
 					内容:<textarea style="width: 200px; height: 150px;margin-top: 10px;" ng-model="cusMsg.reirong"></textarea>
 					
 				</div>
-				
-				
 			</div>
-			
-			
-			
-		</div>	
-	
+		</div>		
 		</div>	
 	
 	
@@ -176,14 +161,14 @@
 		
 		<div class="wxzzb">
 			<div class="wxzzb_top">
-				<div ng-click="bc()">
+				<!--<div ng-click="bc()">
 					<img src="../images/bao.jpg">
 					<p>保存</p>
 				</div>
 				<div ng-click="shanchu()">
 					<img src="../images/jian.jpg">
 					<p>删除</p>
-				</div>
+				</div>-->
 				
 			</div>
 			
