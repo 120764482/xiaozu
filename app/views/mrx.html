@@ -12,17 +12,17 @@
 	
 	</div>
 	<div class="m_main_bottom-top-right">
-		<select >
+		<select>
 		<option>客户阶段</option>
 		<option>客户类型</option>  
-		<option>客户阶段</option>
+		<option>营销阶段</option>
+		<option>所在公司</option>
 		<option>标签</option>
-		<option>名称</option>
 		</select>    
-		<input type="text"   value="" ng-focus="focus()" ng-blur="oblur()" ng-model="omingcheng"/>  
+		<input type="text"   value="" ng-focus="focus()" ng-blur="oblur()" ng-model="omingcheng"/> 
 		<div class="sousu" ng-click="cha"> 
 			<img src="../images/m_so.jpg">
-		   <a>查询</a>
+		  <!-- <a>查询</a>-->
 		</div>
 	</div>
 	</div>	
@@ -36,11 +36,11 @@
 				<td width="129">客户类型</td>
 				<td width="129">所在公司</td>
 				<td width="129">标签</td>
-				<td width="129">添加时间</td>
-				<td width="129">所有人</td>
+				<td width="129">联系日期</td>
+				<td width="129">电话</td>
 				<td width="129" color="#fff">操作</td>
 			</tr>           
-			<tr height="35px" ng-repeat="emp in arr"> 
+			<tr height="35px" ng-repeat="emp in arr |filter:{yingxiaojieduan:omingcheng} " > 
 				<td width="45">
 					<input type="checkbox" ng-checked="iCkeck" index="{{aa}}" ng-click="cli()"/>
 					
@@ -50,8 +50,8 @@
 				<td width="129">{{emp.kehuleixing}}</td>
 				<td width="129">{{emp.suozaigongsi}}</td>
 				<td width="129">{{emp.biaoqian}}</td>
-				<td width="129">{{emp.tianjiashijian}}</td>
-				<td width="129">{{emp.suoyouren}}</td>
+				<td width="129">{{emp.lianxiriqi}}</td>
+				<td width="129">{{emp.dianhua}}</td>
 				<td width="129">{{emp.caozuo}}
 				<span class="tu">
 				<img src="../images/yrk11.png" ng-click="kehu(emp)"/>

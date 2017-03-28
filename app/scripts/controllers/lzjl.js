@@ -36,6 +36,7 @@ angular.module('lytappApp')
 		//全选
 		 $scope.iCkeck = false;
 	     $scope.checkall = false;
+	     console.log(1)
 		  $scope.checkAll = function(){
 		  	if($scope.checkall){
 		  		$scope.iCkeck = true;

@@ -195,8 +195,8 @@ margin-top: 6px;
 	color: #28A4C9;
 }
 .m_main_table{
-	width: 1068px;
-	margin-left: 20px;
+	width: 1088px;
+/*	margin-left: 20px;*/
 }
 .m_main_bottom table tr{
 	border: 1px solid #aad7ae;
@@ -213,13 +213,13 @@ vertical-align: middle;
 }
 /*上一页下一页*/
  .div2{
-	width: 1068px;
+	width: 1088px;
 	height: 36px;
 	background: ;
 	border: 1px solid #93e497;
 	background: #f5f5f5;
 	margin-top: 2px;
-	margin-left: 20px;
+/*	margin-left: 20px;*/
 	overflow: hidden;
 }
  .div2 .p1{
