@@ -11,7 +11,7 @@ angular.module('lytappApp')
 	.controller('lytzyCtrl', ["$scope", "$http","$location", function($scope, $http,$location){
 		$scope.tuichu=function(){
 			localStorage.clear();
-			sessionStorage.clear(); 
+			sessionStorage.clear();  
 			$location.url('/lytdl');  
 		}
 	}])
