@@ -6,9 +6,11 @@
 	width: 1088px;
 	height: 620px;
 	position: relative;
+ overflow: hidden;
+
 }
 
-.wxbox header{
+.wxbox>header{
 	width: 1088px;
 	height: 30px;
 	background: -webkit-linear-gradient(top, #fff, #ededed);
@@ -25,6 +27,8 @@
 	background: -webkit-linear-gradient(top, #fff, #ededed);
 	overflow: hidden;
 }
+
+
 .wxbox .wxdiv1 img{
 	float: left;
 	margin-left: 17px;
@@ -146,7 +150,16 @@
 	
 }
 
-
+.wxzhezhaoxq{
+	width: 500px;
+	height: 400px;
+	background: #BDE2EB;
+	position: fixed;
+	left: 30%;
+	top: 30%;
+	z-index: 9;
+	
+}
 
 
 
@@ -226,8 +239,10 @@
 	margin: 10px 0 0 3px;
 }
 
-
-
+input{
+	text-indent: 0.2rem;
+	
+}
 
 
 
