@@ -1,19 +1,67 @@
 <link rel="stylesheet" href="../styles/lytzy.css" />
 <div ng-controller="lytzyCtrl">
+	<div class="lzheader">
+		<p class="p1">新品期待</p>
+		<img src="../images/1.gif"/>
+		<p class="p2">前往智云通老版本</p>
+		<p class="p3">产品升级日志2015-6-16</p>
+		<ul>
+			<li><a href="javascript:;">智云通首页</a></li>
+			<li><a href="javascript:;">在线客服</a></li>
+			<li><a href="javascript:;">角色切换</a></li>
+			<li><a href="javascript:;" ng-click="tuichu()">安全退出</a></li>
+		</ul>
+	</div>
 	<div class="lyt-zy-header">
-		<!--<logo></logo>-->
-		<a ng-click="tc()">退出登录</a>
+		<logo><img src="../images/logo1.png"/></logo>
+		<ul>
+			<li><a href="javascript:;"><img src="../images/zhuye.png"/></a></li>
+			<li><a href="javascript:;"><img src="../images/kehubg.png"/></a></li>
+			<li><a href="javascript:;"><img src="../images/xiangmu.png"/></a></li>
+			<li><a href="javascript:;"><img src="../images/xiaoshou.png"/></a></li>
+			<li><a href="javascript:;"><img src="../images/chanpin.png"/></a></li>
+			<li><a href="javascript:;"><img src="../images/kefu.png"/></a></li>
+			<li><a href="javascript:;"><img src="../images/kuchun.png"/></a></li>
+			<li><a href="javascript:;"><img src="../images/caigou.png"/></a></li>
+			<li><a href="javascript:;"><img src="../images/caiwu.png"/></a></li>
+			<li><a href="javascript:;"><img src="../images/gongju.png"/></a></li>
+			<li><a href="javascript:;"><img src="../images/xiezuo.png"/></a></li>
+			<li><a href="javascript:;"><img src="../images/shezhi.png"/></a></li>
+			<li><a href="javascript:;"><img src="../images/zhucaidan.png"/></a></li>
+		</ul>
 	</div>
 	<div class="main">
 		<div class="main-left">
 			<ul>
+				<div>
+					<p>客户管理</p>
+					<img src="../images/setup.png"/>
+				</div>
 				<li><a ui-sref=".yrk">客户管理</a></li>
+				<li></li>
 				<li><a ui-sref=".mrx">公海客户</a></li>
+				<li></li>
 				<li><a ui-sref=".lz">联系人员</a></li>
+				<li></li>
 				<li><a ui-sref=".lzjl">联系记录</a></li>
+				<li></li>
 				<li><a ui-sref=".wx">记事本</a></li>
+				<li></li>
 			</ul>
 		</div>
 		<div ui-view class="main-right"></div>
 	</div>
+	<footer>
+		<ul>
+			<li><a href="javascript:;">产品概述</a></li>
+			<li><a href="javascript:;">产品价格</a></li>
+			<li><a href="javascript:;">联系我们</a></li>
+			<li><a href="javascript:;">法律声明</a></li>
+			<li><a href="javascript:;">服务条款</a></li>
+			<li><a href="javascript:;">智云通客户端下载</a></li>
+			<li><a href="javascript:;">合同下载</a></li>
+		</ul>
+		<p class="pp">智云通CRM系统，专注于CRM客户关系管理解决方案，中国最具影响力CRM系统企业！</p>
+		<p class="ppp">杭州数用信息技术有限公司版权所有 Copyright@CRM系统 All rights reserved 浙ICP备12029789号-1</p>
+	</footer>
 </div>

@@ -7,10 +7,11 @@
  * # MainCtrl
  * Controller of the lytappApp
  */
-angular.module('lytappApp')
-  .controller('lytzyCtrl', ["$scope", "$http","$location","$state", function($http, $location, $scope, $state) {
-  
-		$scope.tc=function(){
-			alert(1)
+angular.module('lytappApp')  
+	.controller('lytzyCtrl', ["$scope", "$http","$location", function($scope, $http,$location){
+		$scope.tuichu=function(){
+			localStorage.clear();
+			sessionStorage.clear();
+			$location.url('/lytdl');
 		}
-  }]);
+	}])

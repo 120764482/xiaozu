@@ -124,12 +124,30 @@ img {
 	width: 100%;
 	height: 120px;
 	background: green;
+	overflow: hidden;
 }
 .lyt-zy-header>logo{
 	display: block;
+	float: left;
 	width: 105px;
 	height: 105px;
 	background: url(../images/logo1.png);
+	margin-left: 150px;
+	
+}
+.lyt-zy-header ul{
+	float: left;
+	width: 930px;
+	height: 80px;
+	margin-top: 25px;
+	margin-left: 10px;
+}
+.lyt-zy-header ul li{
+	float: left;
+	margin-left: 5px;
+	margin-top: 5px;
+	width: 58px;
+	height: 67px;
 }
 .lyt-zy-header>a{
 	float:right;
@@ -140,30 +158,174 @@ img {
 }
 .main{
 	width: 100%;
-	height: 620px;
-/*	background: pink;*/
+	height: 530px;
+	border-bottom: 1px solid green;
+	background: #eeffef;
 }
 .main-left{
 	width: 200px;
-	height: 620px;
+	height: 529px;
 	background: #ddeede;
-	margin-left: 20px;
+	margin-left: 18px;
 	float: left;
+	border-left: 2px solid #c6d7c7;
+}
+.main-left>ul div{
+	width: 198px;
+	height:38px;
+	background: #617662;
+	overflow: hidden;
+}
+.main-left>ul div p{
+	float: left;
+	color: #ffffff;
+	line-height: 38px;
+	font-size: 12px;
+	margin-left: 12px;
+}
+.main-left>ul div img{
+	float: right;
+	margin-right: 13px;
+	margin-top: 11px;
 }
 .main-left>ul>li{
 	width: 200px;
-	height:50px;
-	line-height: 50px;
-	border-bottom:1px solid #929292 ;
-	font-size: 18px;
-	text-align: center;
+	height:38px;
+	line-height: 38px;
+	-border-bottom:1px solid #929292 ;
+	font-size: 12px;
+	text-indent: 20px;
 }
 .main-left>ul>li>a{
 	text-decoration: none;
+	color: #666666;
+	font-weight: bold;
+}
+.main-left>ul>li>a:hover{
+	font-size: 14px;
+	color:green;
+}
+.main-left>ul>li:nth-child(3){
+	width: 198px;
+	height: 2px;
+	background: url(../images/xian.jpg) no-repeat;
+}
+.main-left>ul>li:nth-child(5){
+	width: 198px;
+	height: 2px;
+	background: url(../images/xian.jpg) no-repeat;
+}
+.main-left>ul>li:nth-child(7){
+	width: 198px;
+	height: 2px;
+	background: url(../images/xian.jpg) no-repeat;
+}
+.main-left>ul>li:nth-child(9){
+	width: 198px;
+	height: 2px;
+	background: url(../images/xian.jpg) no-repeat;
+}
+.main-left>ul>li:nth-child(11){
+	width: 198px;
+	height: 2px;
+	background: url(../images/xian.jpg) no-repeat;
 }
 .main-right{
 	width: 1088px;
-	height: 620px;
+	height: 530px;
 	float: left;
 }
-
+.lzheader{
+	width: 100%;
+	height: 35px;
+	border-top: 1px solid #c2c2c2;
+	background: #4e4e4e;
+	overflow: hidden;
+}
+.lzheader .p1{
+	color: #d3d3d3;
+	font-size: 12px;
+	float: left;
+	margin-left: 183px;
+	margin-top: 14px;
+}
+.lzheader img{
+	float: left;
+	margin-left: 1px;
+	margin-top: 10px;
+}
+.lzheader .p2{
+	color: #d3d3d3;
+	font-size: 12px;
+	float: left;
+	margin-left: 4px;
+	margin-top: 12px;
+}
+.lzheader .p3{
+	color: #c90000;
+	font-size: 12px;
+	float: left;
+	margin-left: 22px;
+	margin-top: 12px;
+}
+.lzheader ul{
+	width: 300px;
+	height: 14px;
+	margin-top: 10px;
+	float: left;
+	margin-left: 350px;
+}
+.lzheader ul li{
+	width: 74px;
+	height: 14px;
+	border-right: 1px solid #d3d3d3;
+	text-align: center;
+	float: left;
+	font-size: 12px;
+	line-height: 14px;
+}
+.lzheader ul li:nth-child(4){
+	border: none;
+}
+.lzheader ul li a{
+	color: #d3d3d3;
+	text-decoration: none;
+}
+.lzheader ul li a:hover{
+	color: #C90000;
+}
+footer{
+	width: 100%;
+	height: 117px;
+	overflow: hidden;
+}
+footer ul{
+	position: absolute;
+	left: 52%;
+	margin-left: -340px;
+	width: 680px;
+	height: 14px;
+	margin-top: 16px;
+}
+footer ul li{
+	float: left;
+	padding-right:26px ;
+	-color: #848484;
+	font-size: 14px;
+}
+footer ul li a{
+	text-decoration: none;
+	color: #848484;
+}
+footer .pp{
+	color: #848484;
+	font-size: 14px;
+	text-align: center;
+	margin-top: 50px;
+}
+footer .ppp{
+	color: #848484;
+	font-size: 14px;
+	text-align: center;
+	margin-top: 15px;
+}
