@@ -42,11 +42,11 @@ angular.module('lytappApp')
 	
 	
     var arr1=[
-            ['客户名称','简称','电话','联系人'],
+            ['储备客户','潜在客户','成交客户','目标客户'],
             [''],
-	        ['初期','中期','处理异议'],
-	        ['个人客户','团队客户'],
-	        ['']
+		        ['初期','中期','处理异议'],
+		        ['个人客户','团队客户'],
+		        ['已沟通','未沟通']
 	];
 	$('#ss').change(function(){
 		var a=$('#ss').val();
@@ -83,6 +83,7 @@ angular.module('lytappApp')
 		var context = $scope.yrkneirong;
 		$scope.arr = $filter("filter")({classes : context});
 		console.log($scope.arr);
+		
 //		$http({
 //			url: "http://47.88.16.225:411/kehu?tel=" + $scope.yrkneirong,
 //			method: "get"
@@ -111,6 +112,7 @@ angular.module('lytappApp')
 //		clearInterval(timers)
 //	}
 	
+	
 	//全选
 		 $scope.iCkeck = false;
 	     $scope.checkall = false;
@@ -121,6 +123,7 @@ angular.module('lytappApp')
 		  		$scope.iCkeck = false;
 		  	}
 		  }
+	
 	
 	//操作
 		//修改
@@ -233,6 +236,7 @@ angular.module('lytappApp')
 				$(this).next().html('请输入正确格式').css("color", "red");
 			}
 		})
+		
 		//qq验证
 		var qq = /^[1-9][0-9]{4,14}/;
 		$("#qq").blur(function() {
@@ -242,6 +246,7 @@ angular.module('lytappApp')
 				$(this).next().html('请输入正确格式').css("color", "red");
 			}
 		})
+		
 		//邮箱验证
 		var email = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 		$("#email").blur(function() {
@@ -341,6 +346,7 @@ angular.module('lytappApp')
 		}
 		
 	}
+	
 	
 	
   }]);
