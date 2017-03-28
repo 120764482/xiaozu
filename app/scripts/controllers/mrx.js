@@ -133,7 +133,7 @@ angular.module('lytappApp')
 		if($scope.pageNow<=1){
 			$scope.pageNow=1
 		}else{
-			$scope.pageNow--;
+			$scope.pageNow--;  
 			$http({
 				url: "http://47.88.16.225:411/kehu/",
 				method: "get",
