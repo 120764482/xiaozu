@@ -110,7 +110,7 @@ img {
 	width: 1088px;
 	height: 346px;
 	background: #eeffef;
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 .yrkheader{
 	width: 100%;
@@ -353,6 +353,7 @@ img {
 .yrktx_j_b p input{
 	float: left;
 	height: 30px;
+	font-size: 13px;
 }
 .yrktx_j_b p d{
 	width: 50px;
