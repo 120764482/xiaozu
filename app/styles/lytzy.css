@@ -208,7 +208,7 @@ img {
 .main-left>ul>li:nth-child(3){
 	width: 198px;
 	height: 2px;
-	background: url(../images/xian.jpg) no-repeat;
+	background: url(../images/xian.jpg) no-repeat; 
 }
 .main-left>ul>li:nth-child(5){
 	width: 198px;

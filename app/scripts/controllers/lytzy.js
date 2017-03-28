@@ -12,6 +12,6 @@ angular.module('lytappApp')
 		$scope.tuichu=function(){
 			localStorage.clear();
 			sessionStorage.clear();
-			$location.url('/lytdl');
+			$location.url('/lytdl'); 
 		}
 	}])
