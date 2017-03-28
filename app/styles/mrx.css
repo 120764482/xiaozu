@@ -118,7 +118,7 @@ img {
 	font-size: 18px;
 	color: #089525;
 	text-indent: 20px;
-	background: #f6f6f6;
+	background: -webkit-linear-gradient(top, #fff, #ededed);
 }
 .m_main_bottom{
 	width: 1088px;
