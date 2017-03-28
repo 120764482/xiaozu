@@ -10,8 +10,8 @@
 					<div class="yrkh_b_l_top">
 						<i>预定义查询:</i>
 						<div class="yrkh_b_l_top_s">
-							<p style="width: 60px;"><input type="radio" name="kehu" id="" ng-click="xuezhe()" />全部</p>
-							<p><input type="radio" name="kehu" id="" ng-click="xuezhe()" />个人客户</p>
+							<p style="width: 60px;"><input type="radio" name="kehu" id="" ng-click="xuezhe()" ng-checked="bool"/>全部</p>
+							<p><input type="radio" name="kehu" id="" ng-click="xuezhek()" />个人客户</p>
 							<span class="tu">
 									<img src="../images/yrk10.png" alt="添加客户" ng-click="bianxie()" />
 							</span>
@@ -20,17 +20,15 @@
 				</div>
 				<div class="yrkh_b_r">
 					<div class="yrkh_b_r_m">
-						<select id="ss" class="yrkh_b_r_x">
-							<option value="1" >搜索</option>
+						<select id="ss" class="yrkh_b_r_x" ng-model="classifies">
+							<option value="1">搜索</option>
 							<option value="2">客户阶段</option>
 							<option value="3">名称</option>
 							<option value="4">营销阶段</option>
 							<option value="5">客户类型</option>
 							<option value="6">标签</option>
 						<select>
-						<select id="cs" class="yrkh_b_r_g" ng-model="yrkneirong" ng-focus="ofocus()" ng-blur="oblur()">
-							
-						</select>
+						<select id="cs" class="yrkh_b_r_g"></select>
 					</div>
 					<div class="yrkh_b_r_q">
 						<p ng-click="btn()"><span><img src="../images/yrk7.png"/></span>查询</p>
