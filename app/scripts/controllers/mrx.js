@@ -64,6 +64,9 @@ angular.module('lytappApp')
 	  	})
 	  }
 	 
+	 
+//查询
+
 //分页
 //	$http({
 //		url:"http://47.88.16.225:411/kehu",
