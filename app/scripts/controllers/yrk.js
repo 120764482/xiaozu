@@ -113,6 +113,8 @@ angular.module('lytappApp')
 //	}
 	
 	
+	
+	
 	//全选
 		 $scope.iCkeck = false;
 	     $scope.checkall = false;
@@ -123,6 +125,8 @@ angular.module('lytappApp')
 		  		$scope.iCkeck = false;
 		  	}
 		  }
+	
+	
 	
 	
 	//操作
@@ -191,8 +195,10 @@ angular.module('lytappApp')
 			//保存
 			$scope.baocunr = function() {
 					if(!$scope.jieduan||!$scope.suozaigongsi||!$scope.yingxiaojieduan||!$scope.leixing||!$scope.xingbie||!$scope.xingming||!$scope.xingbie||!$scope.zhixingren||!$scope.qq||!$scope.email||!$scope.zhiwei||!$scope.lianxiren||!$scope.biaoqian){
+						
 						alert("请将信息填写完整");
 					}else{
+						
 						alert("客户添加成功！");
 						$http({
 							url: "http://47.88.16.225:411/kehu/?uid=" + localStorage.uid,
@@ -227,11 +233,20 @@ angular.module('lytappApp')
 				}
 		
 	//正则
+	  //性别验证
+	  var xingbie=/^(男|女)$/;
+	  $("#xingbie").blur(function(){
+	  	if($(this).val().match(xingbie)){
+	  		$(this).next().html('√').css("color", "green");
+	  	}else{
+	  		$(this).next().html('请输入正确格式').css("color", "red")
+	  	}
+	  })
 		//手机验证
 		var dianhua = /^((\+)?86|((\+)?86)?)0?1[3458]\d{9}$/; 
 		$("#dianhua").blur(function() {
 			if($(this).val().match(dianhua)) {
-				$(this).next().html('手机号正确').css("color", "green");
+				$(this).next().html('√').css("color", "green");
 			} else {
 				$(this).next().html('请输入正确格式').css("color", "red");
 			}
@@ -241,7 +256,7 @@ angular.module('lytappApp')
 		var qq = /^[1-9][0-9]{4,14}/;
 		$("#qq").blur(function() {
 			if($(this).val().match(qq)) {
-				$(this).next().html('QQ号正确').css("color", "green");
+				$(this).next().html('√').css("color", "green");
 			} else {
 				$(this).next().html('请输入正确格式').css("color", "red");
 			}
@@ -251,7 +266,7 @@ angular.module('lytappApp')
 		var email = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 		$("#email").blur(function() {
 			if($(this).val().match(email)) {
-				$(this).next().html('邮箱正确').css("color", "green");
+				$(this).next().html('√').css("color", "green");
 			} else {
 				$(this).next().html('请输入正确格式').css("color", "red");
 			}
@@ -280,6 +295,7 @@ angular.module('lytappApp')
 	
 	//放入公海
 	$scope.gonghai = function(id, obj){
+		alert("是否放入公海");
 		$http({
 			url:"http://47.88.16.225:411/kehu/" + id,
 			method:"put",
