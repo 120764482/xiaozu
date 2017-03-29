@@ -27,7 +27,13 @@ angular.module('lytappApp')
 	   	
 		$scope.fp=function(){ 
 			if(!$scope.iCkeck&&$scope.aa!=true){
-		 		 alert("请先选择数据");
+		 		// alert("请先选择数据");		 		 
+		 		 $scope.zhez=true;
+					$(".zhe").text("请先选择数据");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
+		 		 
 		   }else{			
 				$scope.gb=true; 
 			}
@@ -48,7 +54,12 @@ angular.module('lytappApp')
 				_method:"delete"
 			}
 		}).then(function(req){
-			alert("删除成功")
+			 $scope.zhez=true;
+					$(".zhe").text("删除成功");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};		
+			//alert("删除成功")
 			location.reload();
 		},function(){
 			console.log("修改失败！");
@@ -63,7 +74,63 @@ angular.module('lytappApp')
 	  		$scope.arr=data.data
 	  	})
 	  }
-	 
+	//编辑
+			$scope.bbbb=false;
+			$scope.xiugai=function(e){
+			//获取id	
+			$http({
+				url:"http://47.88.16.225:411/kehu/"+e,
+				method:"get",
+				data:{}
+			}).then(function(e){
+				console.log(e)
+				$scope.mrx=e.data;
+			},function(){
+				 $scope.zhez=true;
+					$(".zhe").text("请求失败");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
+				//alert("请求失败")
+			})			
+			$scope.bbbb=true;
+			//确认修改
+			$scope.queren1=function(){
+				$http({
+					url:"http://47.88.16.225:411/kehu/"+e,
+					method:"put",
+					data:{
+						"jieduan":$scope.mrx.jieduan,
+						"suozaigongsi":$scope.mrx.suozaigongsi,
+						"yingxiaojieduan":$scope.mrx.yingxiaojieduan,
+						"leixing":$scope.mrx.leixing,
+						"xingming":$scope.mrx.xingming,
+						"xingbie":$scope.mrx.xingbie,
+						"dianhua":$scope.mrx.dianhua,
+						"zhixingren":$scope.mrx.zhixingren,
+						"qq":$scope.mrx.qq,
+						"email":$scope.mrx.email,
+						"lianxiriqi":$scope.mrx.lianxiriqi,
+						"shengri":$scope.mrx.shengri,
+						"zhiwei":$scope.mrx.zhiwei,
+						"duiyingkehu":$scope.mrx.duiyingkehu,
+						"lianxineirong":$scope.mrx.lianxineirong,
+						"lianxiren":$scope.mrx.lianxiren,
+						"data":$scope.mrx.data,
+						"biaoqian":$scope.mrx.biaoqian
+					}
+				}).then(function(data){
+					window.location.reload();
+				})
+				$scope.bbbb=false;
+			}
+			
+			}
+			
+			$scope.guan=function(){
+				$scope.bbbb=false;
+			}	 
+	  
 //分页
 //	$http({
 //		url:"http://47.88.16.225:411/kehu",
@@ -82,7 +149,7 @@ angular.module('lytappApp')
 		if($scope.pageNow<=1){
 			$scope.pageNow=1
 		}else{
-			$scope.pageNow--;
+			$scope.pageNow--;  
 			$http({
 				url: "http://47.88.16.225:411/kehu/",
 				method: "get",
@@ -203,7 +270,12 @@ angular.module('lytappApp')
 				"tel": obj.tel
 			}
 		}).then(function(req){
-			alert("success");        
+			 $scope.zhez=true;
+					$(".zhe").text("success");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
+			//alert("success");        
 			location.reload();
 		},function(){
 			console.log("修改失败！");

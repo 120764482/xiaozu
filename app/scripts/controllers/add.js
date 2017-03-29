@@ -25,13 +25,23 @@ angular.module('lytappApp')
 				console.log(e);
 				$scope.cusMsg = e.data;
 			}, function() {
-				alert("获取信息失败！");
+//				alert("获取信息失败！");
+				$scope.zhez=true;
+					$(".zhe").text("获取信息失败！")
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
 			})
 			$scope.bianji = true;
 
 			$scope.bc = function() {
 			if( $scope.cusMsg.duiyingkehu==""||$scope.cusMsg.data==""||$scope.cusMsg.reirong==""||$scope.cusMsg.chuangjianren=="")	{
-				alert("请填写修改信息")
+//				alert("请填写修改信息")
+				$scope.zhez=true;
+					$(".zhe").text("请填写修改信息");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
 			}else{
 				
 				$http({
@@ -45,7 +55,12 @@ angular.module('lytappApp')
 					}
 
 				}).then(function(data) {
-					alert("修改成功")
+					$scope.zhez=true;
+					$(".zhe").text("修改成功");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
+					//alert("修改成功")
 					window.location.reload()
 				})
 				}
@@ -82,7 +97,12 @@ angular.module('lytappApp')
 				method: "delete",
 			}).then(function(data) {
 				console.log(data)
-				alert("删除成功")
+				
+				$scope.zhez=true;
+			$(".zhe").text("删除成功")
+			$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
 				$scope.arry.splice($index, 1);
 
 			})
@@ -106,7 +126,13 @@ angular.module('lytappApp')
 				console.log(d);
 				$scope.xiqi = d.data;
 			}, function() {
-				alert("获取信息失败！");
+			
+				$scope.zhez=true;
+				$(".zhe").text("获取信息失败！");
+				$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
+				
 			})
 			$scope.xiangqing = true;
 
@@ -125,7 +151,12 @@ angular.module('lytappApp')
 		
 		$scope.baocun = function(){
 			if(!$scope.kehu||!$scope.dataa||!$scope.nei||!$scope.ren) {
-				alert("添加内容为空")
+				$scope.zhez=true;
+					$(".zhe").text("添加内容为空");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+					}
+//				alert("添加内容为空")
 			} else {
 				$http({
 					url: "http://47.88.16.225:411/kehu/?uid=" + localStorage.uid,
@@ -138,7 +169,11 @@ angular.module('lytappApp')
 					}
 
 				}).then(function(data) {
-					alert("添加成功")
+					$scope.zhez=true;
+					$(".zhe").text("添加成功");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
 					window.location.reload()
 				})
 			}
@@ -181,7 +216,15 @@ angular.module('lytappApp')
 	}).then(function(req){
 		$scope.totalPage=Math.ceil(req.data.length/$scope.page);
 	},function(){
-		console.log("请求失败");
+		//console.log("请求失败");
+		$scope.zhez=true;
+					$(".zhe").text("请求失败");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
+		
+		
+		
 	})
 	
 	$scope.prev=function(){
