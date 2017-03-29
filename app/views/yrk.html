@@ -11,7 +11,7 @@
 						<i>预定义查询:</i>
 						<div class="yrkh_b_l_top_s">
 							<p style="width: 60px;"><input type="radio" name="kehu" id="" ng-click="xuezhe()" ng-checked="bool"/>全部</p>
-							<p><input type="radio" name="kehu" id="" ng-click="xuezhek()" />个人客户</p>
+							<p><input type="radio" name="kehu" id="" ng-click="xuezhek()" />我的客户</p>
 							<span class="tu">
 									<img src="../images/yrk10.png" alt="添加客户" ng-click="bianxie()" />
 									<ed>添加客户</ed>
@@ -36,6 +36,7 @@
 					</div>
 					
 				</div>
+				
 			</div>
 		</div>
 		
@@ -234,6 +235,9 @@
 							<option value="未联系">未联系</option>
 						</select>
 					</p>
+					<p>
+						<span>类型：</span>
+						<input type="radio" ng-value="kehu" ng-model="leixin" name="selectState" class="yrk_lx"/></p>
 				</div>
 				
 			</div>
