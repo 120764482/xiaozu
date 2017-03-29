@@ -10,10 +10,12 @@
 angular.module('lytappApp')
   .controller('yrkCtrl',["$scope","$http","myServe","$filter", function ($scope,$http,myServe,$filter) {
 	$scope.bool = true;
+	$scope.kehu="客户"
 	$http({
-			url: "http://47.88.16.225:411/kehu/",
+			url: 'http://47.88.16.225:411/kehu/?{"shi":"客户"}',
 			method: "get",
-			data: {}
+			data: {
+			}
 		}).then(function(data) {
 			$scope.dataArr = data.data;
 			$scope.tiaoo = data.data.length;
@@ -21,7 +23,7 @@ angular.module('lytappApp')
 			$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
 		})
 	var user = localStorage.user;
-  	console.log(user);
+//	console.log(user);
   	$scope.pageNow=1;
   	$scope.page=5;
 	$scope.totalPage=0;
@@ -30,7 +32,7 @@ angular.module('lytappApp')
 	
 	$scope.xuezhe=function(){
 		$http({
-			url: "http://47.88.16.225:411/kehu/",
+			url: 'http://47.88.16.225:411/kehu/?{"shi":"客户"}',
 			method: "get",
 			data: {}
 		}).then(function(data) {
@@ -226,7 +228,8 @@ angular.module('lytappApp')
 								"lianxineirong":$scope.lianxineirong,
 								"lianxiren":$scope.lianxiren,
 								"data":$scope.data,
-								"biaoqian":$scope.biaoqian
+								"biaoqian":$scope.biaoqian,
+								"shi":$scope.kehu
 							}
 						}).then(function(data) {
 							window.location.reload()
