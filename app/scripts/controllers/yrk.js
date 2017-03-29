@@ -21,7 +21,7 @@ angular.module('lytappApp')
 			$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
 		})
 	var user = localStorage.user;
-  	console.log(user);
+//	console.log(user);
   	$scope.pageNow=1;
   	$scope.page=5;
 	$scope.totalPage=0;
