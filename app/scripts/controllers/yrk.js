@@ -52,6 +52,8 @@ angular.module('lytappApp')
 		var a=$('#ss').val();
 		fn(a)
 	})	
+	
+	//ww
 	function fn(x){
 		$('#cs').empty();
 		for(var i=0;i<arr1[x-2].length;i++){
