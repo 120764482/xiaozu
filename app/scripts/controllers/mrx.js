@@ -8,7 +8,7 @@
  * Controller of the lytappApp
  */
 angular.module('lytappApp')
-.controller('mrxCtrl',["$scope","$http",function ($scope,$http) {
+.controller('mrxCtrl',["$scope","$http","$filter",function ($scope,$http,$filter) {
 	$scope.pageNow=1;
   	$scope.page=5;
 	$scope.totalPage=0;	
@@ -27,7 +27,13 @@ angular.module('lytappApp')
 	   	
 		$scope.fp=function(){ 
 			if(!$scope.iCkeck&&$scope.aa!=true){
-		 		 alert("请先选择数据");
+		 		 alert("请先选择数据");		 		 
+//		 		 $scope.zhez=true;
+//					$(".zhe").text("请先选择数据");
+//					$scope.shanshan=function(){
+//						$scope.zhez=false;
+//				};
+		 		 
 		   }else{			
 				$scope.gb=true; 
 			}
@@ -48,6 +54,11 @@ angular.module('lytappApp')
 				_method:"delete"
 			}
 		}).then(function(req){
+//			 $scope.zhez=true;
+//					$(".zhe").text("删除成功");
+//					$scope.shanshan=function(){
+//						$scope.zhez=false;
+//				};		
 			alert("删除成功")
 			location.reload();
 		},function(){
@@ -55,14 +66,53 @@ angular.module('lytappApp')
 		})
 	 }
 //查询	 
-	  $scope.cha=function(){
-	  	$http({
-	  		url: "http://47.88.16.225:411/kehu?mingcheng="+$scope.omingcheng,
-	  		method:"get",
-	  	}).then(function(data){
-	  		$scope.arr=data.data
-	  	})
-	  }
+	var arr1=[
+            ['储备客户','潜在客户','成交客户','目标客户'],
+            [''],
+		        ['初期','中期','处理异议'],
+		        ['个人客户','团队客户'],
+		        ['已沟通','未沟通']
+	];
+	$('#ss').change(function(){
+		var a=$('#ss').val();
+		fn(a)
+	})	
+	function fn(x){
+		$('#cs').empty();
+		for(var i=0;i<arr1[x-2].length;i++){
+				$('#cs').append('<option value='+arr1[x-2][i]+' ng-click="show()">'+arr1[x-2][i]+'</option>')
+		};
+	}
+	
+	//查询
+	$scope.show = function(e){
+		alert(e);
+	}
+	
+	$scope.btn=function(e){
+		$scope.classes = angular.element(".m_main_bottom-top-right_x").val();
+		$scope.context = angular.element(".m_main_bottom-top-right_g").val();
+		if($scope.classes == 1){
+			$scope.classes = "搜索";
+		}else if($scope.classes == 2){
+			$scope.classes = "jieduan";
+		}else if($scope.classes == 3){
+			$scope.classes = "xingming";
+		}else if($scope.classes == 4){
+			$scope.classes = "yingxiaojieduan";
+		}else if($scope.classes == 5){
+			$scope.classes = "leixing";
+		}else if($scope.classes == 6){
+			$scope.classes = "biaoqian";
+		}
+		var classes = $scope.classes;
+		var context = $scope.context;
+		$scope.objStr = '{"'+classes+'":"'+context+'"}';
+		var objStr = $scope.objStr;
+		$scope.obj = JSON.parse(objStr);
+		$scope.arr = $filter("filter")($scope.arr, $scope.obj);
+	}	
+
 	//编辑
 			$scope.bbbb=false;
 			$scope.xiugai=function(e){
@@ -72,9 +122,14 @@ angular.module('lytappApp')
 				method:"get",
 				data:{}
 			}).then(function(e){
-				console.log(e)
+//				console.log(e)
 				$scope.mrx=e.data;
 			},function(){
+//				 $scope.zhez=true;
+//					$(".zhe").text("请求失败");
+//					$scope.shanshan=function(){
+//						$scope.zhez=false;
+//				};
 				alert("请求失败")
 			})			
 			$scope.bbbb=true;
@@ -254,6 +309,11 @@ angular.module('lytappApp')
 				"tel": obj.tel
 			}
 		}).then(function(req){
+			 $scope.zhez=true;
+//					$(".zhe").text("success");
+//					$scope.shanshan=function(){
+//						$scope.zhez=false;
+//				};
 			alert("success");        
 			location.reload();
 		},function(){

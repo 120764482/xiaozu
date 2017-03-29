@@ -251,5 +251,16 @@ input{
 	
 }
 
-
+.zhe{
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	position: fixed;
+	left:40%;
+	top: 55%;
+	background: #CCCCCC;
+	box-shadow: 3px 3px 4px #000; 
+	border: 1px solid #CCCCCC;  
+}
 
