@@ -109,7 +109,7 @@
 		<div class="mrx_bj" ng-show="bbbb" ng-click="kehu1()">
 			<div class="mrx_j_t">
 				<div class="mrx_j_l">
-					<span>修改客户端</span>
+					<span>编辑</span>
 				</div>
 				<div class="mrx_j_r">
 					<img src="../images/xxx.jpg" ng-click="guan()"/>
@@ -118,7 +118,7 @@
 			<div class="mrx_bj_j_b">
 				<div class="mrx_j_b">
 				<p><span>客户阶段：</span>
-					<select name="" ng-model="jieduan">
+					<select name="" ng-model="mrx.jieduan">
 							<option value="目标客户">目标客户</option>
 							<option value="潜在客户">潜在客户</option>
 							<option value="成交客户">储备客户</option>
@@ -127,13 +127,13 @@
 						</select></p>
 				<p><span>所在公司：</span><input type="text" ng-model="mrx.suozaigongsi" /></p>
 				<p><span>营销阶段：</span>
-					<select name="" ng-model="yingxiaojieduan">
+					<select name="" ng-model="mrx.yingxiaojieduan">
 							<option value="初期">初期</option>
 							<option value="中期">中期</option>
 							<option value="处理异议">处理异议</option>
 					</select></p>
 				<p><span>客户类型：</span>
-					<select name="" ng-model="leixing">
+					<select name="" ng-model="mrx.leixing">
 							<option value="个人客户">个人客户</option>
 							<option value="团队客户">团队客户</option>
 						</select></p>
@@ -151,7 +151,7 @@
 				<p><span>联系人：</span><input type="text" ng-model="mrx.lianxiren" /></p>
 				<p><span>日期：</span><input type="text" ng-model="mrx.data" /></p>
 				<p><span>标签：</span>
-				<select name=""  ng-model="biaoqian">
+				<select name=""  ng-model="mrx.biaoqian">
 							<option value="已联系">已联系</option>
 							<option value="未联系">未联系</option>
 						</select></p>
@@ -162,5 +162,12 @@
 				<button ng-click="queren1()">修改</button>
 			</div>
 		</div>		
-	
+<!--//遮罩层-->
+<div class="zhe" ng-show="zhez" ng-click="shanshan()">
+		<p>qqqqqqq</p>
+		
+	</div>
+
+
+
 </div>
