@@ -27,7 +27,13 @@ angular.module('lytappApp')
 	   	
 		$scope.fp=function(){ 
 			if(!$scope.iCkeck&&$scope.aa!=true){
-		 		 alert("请先选择数据");
+		 		// alert("请先选择数据");		 		 
+		 		 $scope.zhez=true;
+					$(".zhe").text("请先选择数据");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
+		 		 
 		   }else{			
 				$scope.gb=true; 
 			}
@@ -48,7 +54,12 @@ angular.module('lytappApp')
 				_method:"delete"
 			}
 		}).then(function(req){
-			alert("删除成功")
+			 $scope.zhez=true;
+					$(".zhe").text("删除成功");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};		
+			//alert("删除成功")
 			location.reload();
 		},function(){
 			console.log("修改失败！");
@@ -75,7 +86,12 @@ angular.module('lytappApp')
 				console.log(e)
 				$scope.mrx=e.data;
 			},function(){
-				alert("请求失败")
+				 $scope.zhez=true;
+					$(".zhe").text("请求失败");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
+				//alert("请求失败")
 			})			
 			$scope.bbbb=true;
 			//确认修改
@@ -254,7 +270,12 @@ angular.module('lytappApp')
 				"tel": obj.tel
 			}
 		}).then(function(req){
-			alert("success");        
+			 $scope.zhez=true;
+					$(".zhe").text("success");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
+			//alert("success");        
 			location.reload();
 		},function(){
 			console.log("修改失败！");
