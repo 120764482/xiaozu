@@ -5,7 +5,18 @@ angular.module('lytappApp')
   	$scope.page=5;
 	$scope.totalPage=0;
 
-
+	$scope.jishiben="记事本";
+		$http({
+				url: 'http://47.88.16.225:411/kehu/?{"shi":"记事本"}',
+			method: "get",
+			data: {}
+		}).then(function(data) {
+			$scope.arry = data.data
+		})
+		
+		
+		
+		
 		$scope.rise = false;
 		$scope.add = function() {
 			$scope.rise = true;
@@ -165,7 +176,8 @@ angular.module('lytappApp')
 						"duiyingkehu": $scope.kehu,
 						"data": $scope.dataa,
 						"reirong": $scope.nei,
-						"chuangjianren": $scope.ren
+						"chuangjianren": $scope.ren,
+						"shi":$scope.jishiben
 					}
 
 				}).then(function(data) {
@@ -182,13 +194,6 @@ angular.module('lytappApp')
 
 		}
 
-		$http({
-			url: "http://47.88.16.225:411/kehu/",
-			method: "get",
-			data: {}
-		}).then(function(data) {
-			$scope.arry = data.data
-		})
 
 		
 		

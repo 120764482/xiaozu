@@ -273,7 +273,7 @@ img {
 	height: 14px;
 	margin-top: 10px;
 	float: left;
-	margin-left: 350px;
+	margin-left: 650px;
 }
 .lzheader ul li{
 	width: 74px;
@@ -284,7 +284,7 @@ img {
 	font-size: 12px;
 	line-height: 14px;
 }
-.lzheader ul li:nth-child(4){
+.lzheader ul li:nth-child(2){
 	border: none;
 }
 .lzheader ul li a{
