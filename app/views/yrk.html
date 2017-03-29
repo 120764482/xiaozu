@@ -121,10 +121,32 @@
 			</div>
 			<div class="yrksmallx_j_b">
 				<div class="yrktx_j_b">
-					<p><span>客户阶段：</span><input type="text" ng-model="yrkdg.jieduan" /></p>
+					<p>
+						<span>客户阶段：</span>
+						<select name="" ng-model="yrkdg.jieduan">
+							<option value="目标客户">目标客户</option>
+							<option value="潜在客户">潜在客户</option>
+							<option value="成交客户">储备客户</option>
+							<option value="潜在客户">成交客户</option>
+							<option value="成交客户">商机客户</option>
+						</select>
+					</p>
 					<p><span>所在公司：</span><input type="text" ng-model="yrkdg.suozaigongsi" /></p>
-					<p><span>营销阶段：</span><input type="text" ng-model="yrkdg.yingxiaojieduan" /></p>
-					<p><span>客户类型：</span><input type="text" ng-model="yrkdg.leixing" /></p>
+					<p>
+						<span>营销阶段：</span>
+						<select name="" ng-model="yrkdg.yingxiaojieduan">
+							<option value="初期">初期</option>
+							<option value="中期">中期</option>
+							<option value="处理异议">处理异议</option>
+						</select>
+					</p>
+					<p>
+						<span>客户性质：</span>
+						<select name="" ng-model="yrkdg.leixing">
+							<option value="个人客户">个人客户</option>
+							<option value="团队客户">团队客户</option>
+						</select>
+					</p>
 					<p><span>姓名：</span><input type="text" ng-model="yrkdg.xingming" /></p>
 					<p><span>性别：</span><input type="text" ng-model="yrkdg.xingbie" /></p>
 					<p><span>电话：</span><input type="text" ng-model="yrkdg.dianhua" /></p>
@@ -138,7 +160,13 @@
 					<p><span>联系内容：</span><input type="text" ng-model="yrkdg.lianxineirong" /></p>
 					<p><span>联系人：</span><input type="text" ng-model="yrkdg.lianxiren" /></p>
 					<p><span>日期：</span><input type="text" ng-model="yrkdg.data" /></p>
-					<p><span>标签：</span><input type="text" ng-model="yrkdg.biaoqian" /></p>
+					<p>
+						<span>标签：</span>
+						<select name=""  ng-model="yrkdg.biaoqian">
+							<option value="已联系">已联系</option>
+							<option value="未联系">未联系</option>
+						</select>
+					</p>
 				</div>
 				
 			</div>
