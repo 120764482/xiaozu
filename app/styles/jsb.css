@@ -224,27 +224,50 @@
 }
 .wxjsb{
    width: 400px;	
-	height: 300px ;
+	height: 330px ;
 
-	margin: 20px auto;
+	margin: 10px auto;
 	border:  1px solid #CCCCCC;
 }
 .wxjsb top{
-	width: 400px;
+	display: block;
+	width: 398px;
 	height: 30px;
 	line-height: 30px;
 	background: #E4E4E4;
 }
+.wxjsb top p{
+	display: block;
+	width: 60px;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 15px;
+}
+
 .wxnr{
 	width: 300px;
 	height: 270px;
 	margin-left: 49px;
 }
+
+.wxnr textarea{
+	margin-left: 20px;
+	
+}
+
+
 .wxnr input{
 	width: 200px;
 	height: 20px;
 	margin: 10px 0 0 3px;
 }
+
+#rad{
+	width: 20px;
+	height: 20px;
+	margin: 15px 0 0 15px;
+}
+
 
 input{
 	text-indent: 0.2rem;
