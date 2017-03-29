@@ -8,9 +8,9 @@
  * Controller of the lytappApp
  */
 angular.module('lytappApp')
-  .controller('lytzyCtrl', ["$scope", "$http","$location","$state", function($http, $location, $scope, $state) {
-  
-		$scope.tc=function(){
-			alert(1)
-		}
-  }]);
+  .controller('lytzyCtrl',function($scope, $state) {
+  	$scope.tcdl=function(){
+  		localStorage.clear()
+  		$state.go("lytdl")
+  	}
+  });
