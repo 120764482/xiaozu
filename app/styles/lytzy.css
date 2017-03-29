@@ -123,8 +123,9 @@ img {
 .lyt-zy-header{
 	width: 100%;
 	height: 120px;
-	background: green;
+	background: url(../images/beijing.gif);
 	overflow: hidden;
+	
 }
 .lyt-zy-header>logo{
 	display: block;
