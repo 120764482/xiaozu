@@ -5,24 +5,23 @@
 	<div class="m_main_bottom">	
 	<div class="m_main_bottom-top">
 	<div class="m_main_bottom-top-left">
-		<a>
+	<a>
 	<img src="../images/m_pl.jpg">
 	<span  ng-click="fp()">批量分配</span>
-	</a>
-	
+	</a>						
 	</div>
 	<div class="m_main_bottom-top-right">
-		<select >
+		<select>
 		<option>客户阶段</option>
 		<option>客户类型</option>  
-		<option>客户阶段</option>
+		<option>营销阶段</option>
+		<option>所在公司</option>
 		<option>标签</option>
-		<option>名称</option>
 		</select>    
-		<input type="text"   value="" ng-focus="focus()" ng-blur="oblur()" ng-model="omingcheng"/>  
+		<input type="text"   value="" ng-focus="focus()" ng-blur="oblur()" ng-model="omingcheng"/> 
 		<div class="sousu" ng-click="cha"> 
 			<img src="../images/m_so.jpg">
-		   <a>查询</a>
+		  <!-- <a>查询</a>-->
 		</div>
 	</div>
 	</div>	
@@ -36,32 +35,33 @@
 				<td width="129">客户类型</td>
 				<td width="129">所在公司</td>
 				<td width="129">标签</td>
-				<td width="129">添加时间</td>
-				<td width="129">所有人</td>
+				<td width="129">联系日期</td>
+				<td width="129">电话</td>
 				<td width="129" color="#fff">操作</td>
 			</tr>           
-			<tr height="35px" ng-repeat="emp in arr"> 
+			<tr height="35px" ng-repeat="emp in arr |filter:{yingxiaojieduan:omingcheng} " > 
 				<td width="45">
 					<input type="checkbox" ng-checked="iCkeck" index="{{aa}}" ng-click="cli()"/>
 					
 				</td>
-				<td width="129">{{emp.kehujieduan}}</td>
+				<td width="129">{{emp.jieduan}}</td>
 				<td width="129">{{emp.yingxiaojieduan}}</td>
-				<td width="129">{{emp.kehuleixing}}</td>
+				<td width="129">{{emp.leixing}}</td>
 				<td width="129">{{emp.suozaigongsi}}</td>
 				<td width="129">{{emp.biaoqian}}</td>
-				<td width="129">{{emp.tianjiashijian}}</td>
-				<td width="129">{{emp.suoyouren}}</td>
+				<td width="129">{{emp.lianxiriqi}}</td>
+				<td width="129">{{emp.dianhua}}</td>
 				<td width="129">{{emp.caozuo}}
 				<span class="tu">
 				<img src="../images/yrk11.png" ng-click="kehu(emp)"/>
 				</span>
-				<img src="../images/m_pl.jpg">
-				<span ng-click="del(emp)">删除</span>
-				</td>
+				<span class="tu">
+  				<img src="../images/yrk9.png" ng-click="xiugai(emp.id)" alt="编辑" />
+				</span>
 				
-			
-			
+				<img src="../images/m_sc.jpg">
+				<span ng-click="del(emp)">删除</span>				
+				</td>		
 			</tr>
 			
 	</table>
@@ -104,4 +104,63 @@
 		</div>
 		</div>
 	</div>
+	<!--编辑-->
+	
+		<div class="mrx_bj" ng-show="bbbb" ng-click="kehu1()">
+			<div class="mrx_j_t">
+				<div class="mrx_j_l">
+					<span>修改客户端</span>
+				</div>
+				<div class="mrx_j_r">
+					<img src="../images/xxx.jpg" ng-click="guan()"/>
+				</div>
+			</div>
+			<div class="mrx_bj_j_b">
+				<div class="mrx_j_b">
+				<p><span>客户阶段：</span>
+					<select name="" ng-model="jieduan">
+							<option value="目标客户">目标客户</option>
+							<option value="潜在客户">潜在客户</option>
+							<option value="成交客户">储备客户</option>
+							<option value="潜在客户">成交客户</option>
+							<option value="成交客户">商机客户</option>
+						</select></p>
+				<p><span>所在公司：</span><input type="text" ng-model="mrx.suozaigongsi" /></p>
+				<p><span>营销阶段：</span>
+					<select name="" ng-model="yingxiaojieduan">
+							<option value="初期">初期</option>
+							<option value="中期">中期</option>
+							<option value="处理异议">处理异议</option>
+					</select></p>
+				<p><span>客户类型：</span>
+					<select name="" ng-model="leixing">
+							<option value="个人客户">个人客户</option>
+							<option value="团队客户">团队客户</option>
+						</select></p>
+				<p><span>姓名：</span><input type="text"     ng-model="mrx.xingming" /></p>
+				<p><span>性别：</span><input type="text"     ng-model="mrx.xingbie" /></p>
+				<p><span>电话：</span><input type="text"     ng-model="mrx.dianhua" /></p>
+				<p><span>执行人：</span><input type="text"   ng-model="mrx.zhixingren" /></p>
+				<p><span>QQ：</span><input type="text"      ng-model="mrx.qq" /></p>
+				<p><span>邮箱：</span><input type="text"    ng-model="mrx.email" /></p>
+				<p><span>联系日期：</span><input type="text" ng-model="mrx.lianxiriqi" /></p>
+				<p><span>生日：</span><input type="text" ng-model="mrx.shengri" /></p>
+				<p><span>职位：</span><input type="text" ng-model="mrx.zhiwei" /></p>
+				<p><span>对应客户：</span><input type="text" ng-model="mrx.duiyingkehu" /></p>
+				<p><span>联系内容：</span><input type="text" ng-model="mrx.lianxineirong" /></p>
+				<p><span>联系人：</span><input type="text" ng-model="mrx.lianxiren" /></p>
+				<p><span>日期：</span><input type="text" ng-model="mrx.data" /></p>
+				<p><span>标签：</span>
+				<select name=""  ng-model="biaoqian">
+							<option value="已联系">已联系</option>
+							<option value="未联系">未联系</option>
+						</select></p>
+				</div>
+				
+			</div>
+			<div class="mrx_j_b_q">
+				<button ng-click="queren1()">修改</button>
+			</div>
+		</div>		
+	
 </div>

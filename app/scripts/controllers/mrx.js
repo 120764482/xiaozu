@@ -63,7 +63,58 @@ angular.module('lytappApp')
 	  		$scope.arr=data.data
 	  	})
 	  }
-	 
+	//编辑
+			$scope.bbbb=false;
+			$scope.xiugai=function(e){
+			//获取id	
+			$http({
+				url:"http://47.88.16.225:411/kehu/"+e,
+				method:"get",
+				data:{}
+			}).then(function(e){
+				console.log(e)
+				$scope.mrx=e.data;
+			},function(){
+				alert("请求失败")
+			})			
+			$scope.bbbb=true;
+			//确认修改
+			$scope.queren1=function(){
+				$http({
+					url:"http://47.88.16.225:411/kehu/"+e,
+					method:"put",
+					data:{
+						"jieduan":$scope.mrx.jieduan,
+						"suozaigongsi":$scope.mrx.suozaigongsi,
+						"yingxiaojieduan":$scope.mrx.yingxiaojieduan,
+						"leixing":$scope.mrx.leixing,
+						"xingming":$scope.mrx.xingming,
+						"xingbie":$scope.mrx.xingbie,
+						"dianhua":$scope.mrx.dianhua,
+						"zhixingren":$scope.mrx.zhixingren,
+						"qq":$scope.mrx.qq,
+						"email":$scope.mrx.email,
+						"lianxiriqi":$scope.mrx.lianxiriqi,
+						"shengri":$scope.mrx.shengri,
+						"zhiwei":$scope.mrx.zhiwei,
+						"duiyingkehu":$scope.mrx.duiyingkehu,
+						"lianxineirong":$scope.mrx.lianxineirong,
+						"lianxiren":$scope.mrx.lianxiren,
+						"data":$scope.mrx.data,
+						"biaoqian":$scope.mrx.biaoqian
+					}
+				}).then(function(data){
+					window.location.reload();
+				})
+				$scope.bbbb=false;
+			}
+			
+			}
+			
+			$scope.guan=function(){
+				$scope.bbbb=false;
+			}	 
+	  
 //分页
 //	$http({
 //		url:"http://47.88.16.225:411/kehu",
@@ -82,7 +133,7 @@ angular.module('lytappApp')
 		if($scope.pageNow<=1){
 			$scope.pageNow=1
 		}else{
-			$scope.pageNow--;
+			$scope.pageNow--;  
 			$http({
 				url: "http://47.88.16.225:411/kehu/",
 				method: "get",

@@ -350,9 +350,10 @@ img {
 	width: 76px;
 	line-height: 30px;
 }
-.yrktx_j_b p input{
+.yrktx_j_b p select{
+	width: 158px;
 	float: left;
-	height: 30px;
+	height: 25px;
 	font-size: 13px;
 }
 .yrktx_j_b p d{

@@ -15,7 +15,7 @@ angular.module('lytappApp')
 			method: "get",
 			data: {}
 		}).then(function(data) {
-			$scope.dataArr = data;
+			$scope.dataArr = data.data;
 			$scope.tiaoo = data.data.length;
 			$scope.arr = data.data;
 			$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
@@ -64,33 +64,38 @@ angular.module('lytappApp')
 		alert(e);
 	}
 	
-	$scope.btn=function(){
-		var classes;
-		if($scope.classifies == 1){
-			classes = "搜索";
-		}else if($scope.classifies == 2){
-			classes = "客户阶段";
-		}else if($scope.classifies == 3){
-			classes = "名称";
-		}else if($scope.classifies == 4){
-			classes = "营销阶段";
-		}else if($scope.classifies == 5){
-			classes = "客户类型";
-		}else if($scope.classifies == 6){
-			classes = "标签";
+	$scope.btn=function(e){
+		$scope.classes = angular.element(".yrkh_b_r_x").val();
+		$scope.context = angular.element(".yrkh_b_r_g").val();
+		if($scope.classes == 1){
+			$scope.classes = "搜索";
+		}else if($scope.classes == 2){
+			$scope.classes = "jieduan";
+		}else if($scope.classes == 3){
+			$scope.classes = "xingming";
+		}else if($scope.classes == 4){
+			$scope.classes = "yingxiaojieduan";
+		}else if($scope.classes == 5){
+			$scope.classes = "leixing";
+		}else if($scope.classes == 6){
+			$scope.classes = "biaoqian";
 		}
-		alert($scope.yrkneirong);
-		var context = $scope.yrkneirong;
-		$scope.arr = $filter("filter")({classes : context});
-		console.log($scope.arr);
-		
+		var classes = $scope.classes;
+		var context = $scope.context;
+		$scope.objStr = '{"'+classes+'":"'+context+'"}';
+		var objStr = $scope.objStr;
+		$scope.obj = JSON.parse(objStr);
+		$scope.arr = $filter("filter")($scope.dataArr, $scope.obj);
+	}	
+	
+	
 //		$http({
 //			url: "http://47.88.16.225:411/kehu?tel=" + $scope.yrkneirong,
 //			method: "get"
 //		}).then(function(data) {
 //			$scope.arr = data.data
 //		})
-	}
+	
 //	var timers = null;
 //	$scope.ofocus = function(){
 //		timers = setInterval(function(){
@@ -363,7 +368,61 @@ angular.module('lytappApp')
 		
 	}
 	
-	
+			//$scope.prev=function(){
+		//	if($scope.pageNow<=1){
+		//	$scope.pageNow=1
+		//	}else{
+		//	$scope.pageNow--;
+		//	$http({
+		//	url: "http://47.88.16.225:411/kehu/",
+		//	method: "get",
+		//	data: {}
+		//	}).then(function(data) {
+		//	var cusArr = [];
+		//	var data2 = data.data;
+		//	for(var i=0; i<data2.length; i++){
+		//	if(data2[i].zhixingren == "public"){
+		//	      cusArr.push(data2[i]);
+		//	    }
+		//	}
+		//	$scope.pageNow=1;
+		//	$scope.totalPage=Math.ceil(cusArr.length/$scope.page);
+		//	$scope.tiao = cusArr.length;
+		//	$scope.arr = cusArr;
+		//	$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
+		//	})
+		//	
+		//	}
+		//	
+		//	}
+		//	//下一页
+		//	$scope.next=function(){
+		//	if($scope.pageNow>=$scope.totalPage){
+		//	$scope.pageNow=$scope.totalPage
+		//	}else{
+		//	$scope.pageNow++;
+		//	$http({
+		//	url: "http://47.88.16.225:411/kehu/",
+		//	method: "get",
+		//	data: {}
+		//	}).then(function(data) {
+		//	var cusArr = [];
+		//	var data2 = data.data;
+		//	for(var i=0; i<data2.length; i++){
+		//	if(data2[i].zhixingren == "public"){
+		//	      cusArr.push(data2[i]);
+		//	    }
+		//	}
+		//	$scope.pageNow=1;
+		//	$scope.totalPage=Math.ceil(cusArr.length/$scope.page);
+		//	$scope.tiao = cusArr.length;
+		//	$scope.arr = cusArr;
+		//	$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
+		//	})
+		//	
+		//	}
+		//	
+		//	}
 	
   }]);
   
