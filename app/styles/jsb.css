@@ -224,9 +224,9 @@
 }
 .wxjsb{
    width: 400px;	
-	height: 300px ;
+	height: 330px ;
 
-	margin: 20px auto;
+	margin: 10px auto;
 	border:  1px solid #CCCCCC;
 }
 .wxjsb top{
@@ -245,6 +245,13 @@
 	height: 20px;
 	margin: 10px 0 0 3px;
 }
+
+#rad{
+	width: 20px;
+	height: 20px;
+	margin: 15px 0 0 15px;
+}
+
 
 input{
 	text-indent: 0.2rem;
