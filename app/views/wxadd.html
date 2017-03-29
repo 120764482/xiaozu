@@ -5,8 +5,7 @@
 		<title></title>	
 		<link rel="stylesheet" href="../styles/jsb.css" /> 
 	</head>
-	<body>
-		
+	<body>		
 		<div ng-controller="wxaddCtrl" class="wxbox">		
 	<header>
 		记事本
@@ -24,14 +23,14 @@
 			</a>-->
 		
 	</div>
-	<wxmain>
+	<div class="mainta">
 		<table border="1" cellspacing="0" cellpadding="1" bordercolor="#d8d7d3">
 			<tr bgcolor="#98ea98">
 				<td width="60">
 				<input type="checkbox" name="" id="" value="" ng-click='checkAll()' ng-model='checkall' />
 				</td>
 				        <td>操作</td>
-						<td>对应那个客户</td>
+						<td>对应客户</td>
 						<td>日期</td>
 						<td>创建人</td>
 						<td>内容</td>
@@ -42,8 +41,9 @@
 				</td>
 				
 				<td>
-			<p ng-click="bjis(a,$index)">修改</p>						
+			<p ng-click="bjis(wx.id,$index)">修改</p>						
 			<p ng-click="deldel(wx.id,$index)">删除</p>
+				<p ng-click="xiqing(wx.id,$index)">详情</p>
 				</td>							
 						
 				<td>{{wx.duiyingkehu}}</td>
@@ -52,17 +52,17 @@
 				<td>{{wx.reirong}}</td>	
 			</tr>
 		</table>
-	</main>
+</div>
 	
 	
 	
 	
 	<div class="wxdiv2">
-		<p class="p1">1</p>
+		<p class="p1">{{pageNow}}</p>
 		<div class="page">
-			<p>上一页</p>
-			<p>下一页</p>
-			<p>共:2条</p>
+			<p ng-click="prev()">上一页</p>
+			<p ng-click="next()">下一页</p>
+			<p>共:<span style="color: red;">{{tiaoshu}}</span>条</p>
 		</div>
 	</div>	
 	
@@ -83,29 +83,26 @@
 					<img src="../images/bao.jpg">
 					<p>保存</p>
 				</div>
-				<div>
+				<!--<div>
 					<img src="../images/jia.jpg">
 					<p>保存继续</p>
-				</div>
+				</div>-->
 				
 			</div>
-			
+	
 			
 			
 			<div class="wxjsb">
 				<top>记事本</top>
 				<div class="wxnr">
-					客&nbsp;&nbsp;&nbsp;户:<input type="text" ng-model="kehu"/><br />
-					日&nbsp;&nbsp;&nbsp;期:<input type="date" ng-model="dataa"/><br />
-					创建人:<input type="text" ng-model="ren" /><br />
-					内容:<textarea style="width: 200px; height: 150px;margin-top: 10px;" ng-model="nei"></textarea>
+					客&nbsp;&nbsp;&nbsp;户:<input type="text" ng-model="kehu" /><br />
+					日&nbsp;&nbsp;&nbsp;期:<input type="data" ng-model="dataa" /><br />
+					创建人:<input type="text" ng-model="ren"/><br />
+					内容:<textarea style="width: 200px; height: 150px;margin-top: 10px;" ng-model="nei" ></textarea>
 					
 				</div>
-
 			</div>
-
 		</div>	
-
 		</div>	
 	
 	
@@ -115,7 +112,7 @@
 				
 	<div class="wxzhezhaobj" ng-show="bianji">
 		<div class="zzct">
-		<p>编辑记事本</p>	
+		<p>修改记事本</p>	
 		<img src="../images/xxx.jpg"/ ng-click="dell()">
 		</div>
 		
@@ -126,10 +123,10 @@
 					<img src="../images/bao.jpg">
 					<p>保存</p>
 				</div>
-				<div ng-click="shanchu()">
+				<!--<div ng-click="shanchu()">
 					<img src="../images/jian.jpg">
 					<p>删除</p>
-				</div>
+				</div>-->
 				
 			</div>
 			
@@ -138,10 +135,52 @@
 			<div class="wxjsb">
 				<top>记事本</top>
 				<div class="wxnr">
-					客&nbsp;&nbsp;&nbsp;户:<input type="text" ng-model="abc.kehu"/><br />
-					日&nbsp;&nbsp;&nbsp;期:<input type="date" ng-model="abc.data"/><br />
-					创建人:<input type="text" ng-model="abc.ren"/><br />
-					内容:<textarea style="width: 200px; height: 150px;margin-top: 10px;" ng-model="abc.nei"></textarea>
+					客&nbsp;&nbsp;&nbsp;户:<input type="text" ng-model="cusMsg.duiyingkehu"/><br />
+					日&nbsp;&nbsp;&nbsp;期:<input type="data" ng-model="cusMsg.data"/><br />
+					创建人:<input type="text" ng-model="cusMsg.chuangjianren"/><br />
+					内容:<textarea style="width: 200px; height: 150px;margin-top: 10px;" ng-model="cusMsg.reirong"></textarea>
+					
+				</div>
+			</div>
+		</div>		
+		</div>	
+	
+	
+	
+	
+	
+	
+	 
+	
+	<div class="wxzhezhaoxq" ng-show="xiangqing">
+		<div class="zzct">
+		<p>记事本详情</p>	
+		<img src="../images/xxx.jpg"/ ng-click="xxxx()">
+		</div>
+		
+		
+		<div class="wxzzb">
+			<div class="wxzzb_top">
+				<!--<div ng-click="bc()">
+					<img src="../images/bao.jpg">
+					<p>保存</p>
+				</div>
+				<div ng-click="shanchu()">
+					<img src="../images/jian.jpg">
+					<p>删除</p>
+				</div>-->
+				
+			</div>
+			
+			
+			
+			<div class="wxjsb">
+				<top>记事本</top>
+				<div class="wxnr">
+					客&nbsp;&nbsp;&nbsp;户:<input type="text" ng-model="xiqi.duiyingkehu"/><br />
+					日&nbsp;&nbsp;&nbsp;期:<input type="data" ng-model="xiqi.data"/><br />
+					创建人:<input type="text" ng-model="xiqi.chuangjianren"/><br />
+					内容:<textarea style="width: 200px; height: 150px;margin-top: 10px;" ng-model="xiqi.reirong"></textarea>
 					
 				</div>
 				
@@ -151,14 +190,17 @@
 			
 			
 		</div>	
-			
-			
-			
-				
-		</div>	
+	
+		</div>
 	
 	
 	
+	
+	
+	<div class="zhe" ng-show="zhez" ng-click="shanshan()">
+		<p>qqqqqqq</p>
+		
+	</div>
 	
 	
 	
@@ -166,13 +208,5 @@
 	
 	
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
 	</body>
 </html>

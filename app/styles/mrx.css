@@ -118,7 +118,7 @@ img {
 	font-size: 18px;
 	color: #089525;
 	text-indent: 20px;
-	background: #f6f6f6;
+	background: -webkit-linear-gradient(top, #fff, #ededed);
 }
 .m_main_bottom{
 	width: 1088px;
@@ -149,6 +149,87 @@ width: 16px;
 height: 16px;
 margin-top: 6px;
 }
+.tu{
+	padding: 5px;
+}
+.tu img:hover{
+	cursor: pointer;
+}
+/*修改*/
+.mrx_bj{
+	width: 700px;
+	height: 350px;
+	background: #fff;
+	position: absolute;  
+	left: 30%;
+	top: 30%;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.mrx_j_t{
+	width: 100%;
+	height: 30px;
+	background: #2AABD2;
+	opacity: 0.5;
+}
+.mrx_j_l{
+	width: 90%;
+	height: 30px;
+	float: left;
+}
+.mrx_j_l span{
+	line-height: 30px;
+	margin-left: 10px;
+}
+.mrx_j_r{
+	width: 10%;
+	height: 30px;
+	float: right;
+}
+.mrx_j_r img{
+	padding: 5px 26px;
+}
+.mrx_bj_j_b{
+	width: 98%;
+	margin: 4px auto;
+}
+.mrx_j_b{
+	width: 98%;
+	height: 270px;
+	overflow-y: auto;
+	margin: 0 auto;
+}
+.mrx_j_b p{
+	display: inline-block;
+	float: left;
+	width: 300px;
+	height: 30px;
+	margin: 5px;
+}
+.mrx_j_b p span{
+	float: left;
+	width: 76px;
+	line-height: 30px;
+}
+.mrx_j_b p select{
+	width: 158px;
+	float: left;
+	height: 25px;
+	font-size: 13px;
+}
+.mrx_j_b p d{
+	width: 50px;
+	height: 30px;
+	float: right;
+}
+.mrx_j_b_q{
+	width: 100%;
+	display: inline;
+}
+.mrx_j_b_q button{
+	margin-left: 45%;
+}
+
 .m_main_bottom-top-right{ 
 	/*270*/
 	width: 360px;     
@@ -195,8 +276,8 @@ margin-top: 6px;
 	color: #28A4C9;
 }
 .m_main_table{
-	width: 1068px;
-	margin-left: 20px;
+	width: 1088px;
+/*	margin-left: 20px;*/
 }
 .m_main_bottom table tr{
 	border: 1px solid #aad7ae;
@@ -213,13 +294,13 @@ vertical-align: middle;
 }
 /*上一页下一页*/
  .div2{
-	width: 1068px;
+	width: 1088px;
 	height: 36px;
 	background: ;
 	border: 1px solid #93e497;
 	background: #f5f5f5;
 	margin-top: 2px;
-	margin-left: 20px;
+/*	margin-left: 20px;*/
 	overflow: hidden;
 }
  .div2 .p1{
@@ -352,4 +433,17 @@ border-bottom-right-radius: 5px;
 .hezi-select select{
 	width: 100px;
 	height: 25px;
+}
+/*//遮罩层*/
+.zhe{
+	width: 200px;
+	height: 100px;
+	line-height: 40px;
+	text-align: center;
+	position: fixed;
+	left:40%;
+	top: 55%;
+	background: #CCCCCC;
+	box-shadow: 3px 3px 4px #000; 
+	border: 1px solid #CCCCCC;  
 }
