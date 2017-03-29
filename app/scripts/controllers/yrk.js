@@ -90,7 +90,7 @@ angular.module('lytappApp')
 		$scope.arr = $filter("filter")($scope.dataArr, $scope.obj);
 	}	
 	
-	
+	//查
 //		$http({
 //			url: "http://47.88.16.225:411/kehu?tel=" + $scope.yrkneirong,
 //			method: "get"
@@ -284,7 +284,7 @@ angular.module('lytappApp')
 	// 个人客户
 	$scope.xuezhek=function(){
 		$http({
-			url:"http://47.88.16.225:411/kehu/",
+			url:'http://47.88.16.225:411/kehu/?{"shi":"客户"}',
 			method:"get",
 			data:{}
 		}).then(function(data){
@@ -316,7 +316,7 @@ angular.module('lytappApp')
 				"tel": obj.tel
 			}
 		}).then(function(req){
-			console.log(req);
+//			console.log(req);
 			window.location.reload();
 		},function(){
 			console.log("修改失败！");
@@ -371,61 +371,61 @@ angular.module('lytappApp')
 		
 	}
 	
-			//$scope.prev=function(){
-		//	if($scope.pageNow<=1){
-		//	$scope.pageNow=1
-		//	}else{
-		//	$scope.pageNow--;
-		//	$http({
-		//	url: "http://47.88.16.225:411/kehu/",
-		//	method: "get",
-		//	data: {}
-		//	}).then(function(data) {
-		//	var cusArr = [];
-		//	var data2 = data.data;
-		//	for(var i=0; i<data2.length; i++){
-		//	if(data2[i].zhixingren == "public"){
-		//	      cusArr.push(data2[i]);
-		//	    }
-		//	}
-		//	$scope.pageNow=1;
-		//	$scope.totalPage=Math.ceil(cusArr.length/$scope.page);
-		//	$scope.tiao = cusArr.length;
-		//	$scope.arr = cusArr;
-		//	$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
-		//	})
-		//	
-		//	}
-		//	
-		//	}
-		//	//下一页
-		//	$scope.next=function(){
-		//	if($scope.pageNow>=$scope.totalPage){
-		//	$scope.pageNow=$scope.totalPage
-		//	}else{
-		//	$scope.pageNow++;
-		//	$http({
-		//	url: "http://47.88.16.225:411/kehu/",
-		//	method: "get",
-		//	data: {}
-		//	}).then(function(data) {
-		//	var cusArr = [];
-		//	var data2 = data.data;
-		//	for(var i=0; i<data2.length; i++){
-		//	if(data2[i].zhixingren == "public"){
-		//	      cusArr.push(data2[i]);
-		//	    }
-		//	}
-		//	$scope.pageNow=1;
-		//	$scope.totalPage=Math.ceil(cusArr.length/$scope.page);
-		//	$scope.tiao = cusArr.length;
-		//	$scope.arr = cusArr;
-		//	$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
-		//	})
-		//	
-		//	}
-		//	
-		//	}
+//			$scope.prev=function(){
+//			if($scope.pageNow<=1){
+//			$scope.pageNow=1
+//			}else{
+//			$scope.pageNow--;
+//			$http({
+//			url: "http://47.88.16.225:411/kehu/",
+//			method: "get",
+//			data: {}
+//			}).then(function(data) {
+//			var cusArr = [];
+//			var data2 = data.data;
+//			for(var i=0; i<data2.length; i++){
+//			if(data2[i].zhixingren == "public"){
+//			      cusArr.push(data2[i]);
+//			    }
+//			}
+//			$scope.pageNow=1;
+//			$scope.totalPage=Math.ceil(cusArr.length/$scope.page);
+//			$scope.tiao = cusArr.length;
+//			$scope.arr = cusArr;
+//			$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
+//			})
+//			
+//			}
+//			
+//			}
+//			//下一页
+//			$scope.next=function(){
+//			if($scope.pageNow>=$scope.totalPage){
+//			$scope.pageNow=$scope.totalPage
+//			}else{
+//			$scope.pageNow++;
+//			$http({
+//			url: "http://47.88.16.225:411/kehu/",
+//			method: "get",
+//			data: {}
+//			}).then(function(data) {
+//			var cusArr = [];
+//			var data2 = data.data;
+//			for(var i=0; i<data2.length; i++){
+//			if(data2[i].zhixingren == "public"){
+//			      cusArr.push(data2[i]);
+//			    }
+//			}
+//			$scope.pageNow=1;
+//			$scope.totalPage=Math.ceil(cusArr.length/$scope.page);
+//			$scope.tiao = cusArr.length;
+//			$scope.arr = cusArr;
+//			$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
+//			})
+//			
+//			}
+//			
+//			}
 	
   }]);
   
