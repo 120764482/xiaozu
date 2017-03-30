@@ -22,6 +22,7 @@ dt {
 	outline: none;
 	font-style: normal;
 	box-sizing: border-box;
+	
 }
 
 ul,
@@ -123,8 +124,10 @@ img {
 .lyt-zy-header{
 	width: 100%;
 	height: 120px;
-	background: green;
+	background: url(../images/beijing.gif) no-repeat;
+	/*margin-left: -10px;*/
 	overflow: hidden;
+	
 }
 .lyt-zy-header>logo{
 	display: block;
