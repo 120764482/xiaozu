@@ -144,14 +144,21 @@
 					<select name="" ng-model="mrx.leixing">
 							<option value="个人客户">个人客户</option>
 							<option value="团队客户">团队客户</option>
+							<option value="分销商">分销商</option>
+							<option value=">代理商商">代理商</option>
 						</select></p>
 				<p><span>姓名：</span><input type="text"     ng-model="mrx.xingming" /></p>
-				<p><span>性别：</span><input type="text"     ng-model="mrx.xingbie" /></p>
+				<p><span>性别：</span>
+					<select name="" ng-model="mrx.xingbie">
+							<option value="男">男</option>
+							<option value="女">女</option>
+						</select>
+				</p>
 				<p><span>电话：</span><input type="text"     ng-model="mrx.dianhua" /></p>
 				<p><span>执行人：</span><input type="text"   ng-model="mrx.zhixingren" /></p>
 				<p><span>QQ：</span><input type="text"      ng-model="mrx.qq" /></p>
 				<p><span>邮箱：</span><input type="text"    ng-model="mrx.email" /></p>
-				<p><span>联系日期：</span><input type="text" ng-model="mrx.lianxiriqi"/></p><!--class="Wdate" onFocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyyMMdd'})"-->
+				<p><span>联系日期：</span><input type="" ng-model="mrx.lianxiriqi"/></p><!--class="Wdate" onFocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyyMMdd'})"-->
 				<p><span>生日：</span><input type="text" ng-model="mrx.shengri" /></p>
 				<p><span>职位：</span><input type="text" ng-model="mrx.zhiwei" /></p>
 				<p><span>对应客户：</span><input type="text" ng-model="mrx.duiyingkehu" /></p>
@@ -160,8 +167,12 @@
 				<p><span>日期：</span><input type="text" ng-model="mrx.data" /></p>
 				<p><span>标签：</span>
 				<select name=""  ng-model="mrx.biaoqian">
-							<option value="已联系">已联系</option>
 							<option value="未联系">未联系</option>
+							<option value="已沟通">已沟通</option>
+							<option value="已报价">已报价</option>
+							<option value="已成交">已成交</option>
+							<option value="已签合同">已签合同</option>
+							<option value="已做方案">已做方案</option>
 						</select></p>
 				</div>
 				
