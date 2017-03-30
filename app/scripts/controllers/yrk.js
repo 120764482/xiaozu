@@ -11,7 +11,15 @@ angular.module('lytappApp')
   .controller('yrkCtrl',["$scope","$http","myServe","$filter", function ($scope,$http,myServe,$filter) {
 	$scope.bool = true;
 	$http({
+<<<<<<< HEAD
 			url: "http://47.88.16.225:411/kehu/",
+=======
+<<<<<<< HEAD
+			url: 'http://47.88.16.225:411/kehu/',
+=======
+			url: 'http://47.88.16.225:411/kehu/?{"shi":"客户"}',
+>>>>>>> origin/master
+>>>>>>> origin/master
 			method: "get",
 			data: {}
 		}).then(function(data) {
