@@ -6,6 +6,8 @@ angular.module('lytappApp')
 	$scope.totalPage=0;
 
 	$scope.jishiben="记事本";
+	//获取添加内容
+	
 		$http({
 				url: 'http://47.88.16.225:411/kehu/?{"shi":"记事本"}',
 			method: "get",
@@ -26,6 +28,7 @@ angular.module('lytappApp')
 			$scope.rise = false;
 		}
 
+//编辑开始
 		$scope.bianji = false;
 		$scope.bjis = function(e, b) {
 			$http({
@@ -83,6 +86,7 @@ angular.module('lytappApp')
 			$scope.bianji = false;
 		}
 
+//多选
 		$scope.iCkeck = false;
 		$scope.checkall = false;
 		$scope.checkAll = function() {
@@ -100,7 +104,7 @@ angular.module('lytappApp')
 
 
 
-
+//删除
 		$scope.deldel = function(a, $index) {
 			console.log(a)
 			$http({
@@ -125,7 +129,7 @@ angular.module('lytappApp')
 
 
 
-		
+		//详情
 		
 			$scope.xiangqing = false;
 		$scope.xiqing = function(d, b) {
@@ -159,7 +163,7 @@ angular.module('lytappApp')
 		
 		
 		
-		
+		//添加开始
 		$scope.baocun = function(){
 			if(!$scope.kehu||!$scope.dataa||!$scope.nei||!$scope.ren) {
 				$scope.zhez=true;
@@ -214,7 +218,7 @@ angular.module('lytappApp')
 		
 		
 		
-
+//分页效果
 		$http({
 		url:"http://47.88.16.225:411/kehu",
 		type:"get"
@@ -231,7 +235,7 @@ angular.module('lytappApp')
 		
 		
 	})
-	
+	//上一页
 	$scope.prev=function(){
 		if($scope.pageNow<=1){
 			$scope.pageNow=1
@@ -250,6 +254,7 @@ angular.module('lytappApp')
 		}
 		
 	}
+	//下一页
 	$scope.next=function(){
 		if($scope.pageNow>=$scope.totalPage){
 			$scope.pageNow=$scope.totalPage
