@@ -171,114 +171,6 @@ angular.module('lytappApp')
 			$scope.guan=function(){
 				$scope.bbbb=false;
 			}	 
-	  
-//分页
-//	$http({
-//		url:"http://47.88.16.225:411/kehu",
-//		method:"get"
-//	}).then(function(req){
-////		$scope.pageNow=1;
-////		$scope.totalPage=Math.ceil(req.data.length/$scope.page);
-////		$scope.tiao = req.data.length;
-//		$scope.arr = req.data;
-////		$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
-//	},function(){
-//		console.log("请求失败");
-//	})
-//上一页	
-//	$scope.prev=function(){
-//		if($scope.pageNow<=1){
-//			$scope.pageNow=1
-//		}else{
-//			$scope.pageNow--;  
-//			$http({
-//				url: "http://47.88.16.225:411/kehu/",
-//				method: "get",
-//				data: {}
-//			}).then(function(data) {
-//				var cusArr = [];
-//				var data2 = data.data;
-//				for(var i=0; i<data2.length; i++){
-//					if(data2[i].zhixingren == "public"){
-//				      cusArr.push(data2[i]);
-//				    }
-//				}
-//				$scope.pageNow=1;
-//				$scope.totalPage=Math.ceil(cusArr.length/$scope.page);
-//				$scope.tiao = cusArr.length;
-//				$scope.arr = cusArr;
-//				$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
-//			})
-//			
-//		}
-//		
-//	}
-////下一页
-//		$scope.next=function(){
-//		if($scope.pageNow>=$scope.totalPage){
-//			$scope.pageNow=$scope.totalPage
-//		}else{
-//			$scope.pageNow++;
-//			$http({
-//				url: "http://47.88.16.225:411/kehu/",
-//				method: "get",
-//				data: {}
-//			}).then(function(data) {
-//				var cusArr = [];
-//				var data2 = data.data;
-//				for(var i=0; i<data2.length; i++){
-//					if(data2[i].zhixingren == "public"){
-//				      cusArr.push(data2[i]);
-//				    }
-//				}
-//				$scope.pageNow=1;
-//				$scope.totalPage=Math.ceil(cusArr.length/$scope.page);
-//				$scope.tiao = cusArr.length;
-//				$scope.arr = cusArr;
-//				$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
-//			})
-//			
-//		}
-//		
-//	}
-
-$scope.prev=function(){
-		if($scope.pageNow<=1){
-			$scope.pageNow=1
-		}else{
-			$scope.pageNow--;
-			$http({
-				url: "http://47.88.16.225:411/kehu/",
-				method: "get",
-				data: {}
-			}).then(function(data) {
-				$scope.tiaoshu = data.data.length;
-				$scope.arry = data.data;
-				$scope.arry=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
-			})
-			
-		}
-		
-	}
-	$scope.next=function(){
-		if($scope.pageNow>=$scope.totalPage){
-			$scope.pageNow=$scope.totalPage
-		}else{
-			$scope.pageNow++;
-			$http({
-				url: "http://47.88.16.225:411/kehu/",
-				method: "get",
-				data: {}
-			}).then(function(data) {
-				$scope.tiaoshu = data.data.length;
-				$scope.arry = data.data;
-				$scope.arry=$scope.arry.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
-			})
-			
-		}
-		
-	}
-
 ////获取列表
    	$http({
    		url:"http://47.88.16.225:411/kehu/",
@@ -299,27 +191,61 @@ $scope.prev=function(){
 		$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
 //		$scope.arr = cusArr;
 //		console.log(cusArr);
-   	})
-
-   //放入客户管理
-//	$scope.gonghai = function(id, obj){
-//		$http({
-//			url:"http://47.88.16.225:411/kehu/" + id,
-//			method:"put",
-//			data: {
-//				"duiyingkehu": obj.duiyingkehu,
-//				"lianxineirong": obj.lianxineirong,
-//				"lianxiriqi":  obj.lianxiriqi,
-//				"lianxiren":  obj.lianxiren,
-//				"zhixingren":  "a123456",
-//				"tel": obj.tel
-//			}
-//		}).then(function(req){
-//			alert(req)
-//		},function(){
-//			console.log("修改失败！");
-//		})
-//	}
+   	})	  
+//上一页	
+	$scope.prev=function(){
+		if($scope.pageNow<=1){
+			$scope.pageNow=1
+		}else{
+			$scope.pageNow--;  
+			$http({
+				url: "http://47.88.16.225:411/kehu/",
+				method: "get",
+				data: {}
+			}).then(function(data) {
+				var cusArr = [];
+				var data2 = data.data;
+				for(var i=0; i<data2.length; i++){
+					if(data2[i].zhixingren == "public"){
+				      cusArr.push(data2[i]);
+				    }
+				}
+				$scope.pageNow=1;
+				$scope.totalPage=Math.ceil(cusArr.length/$scope.page);
+				$scope.tiao = cusArr.length;
+				$scope.arr = cusArr;
+				$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
+			})
+			
+		}
+		
+	}
+//下一页
+		$scope.next=function(){
+		if($scope.pageNow>=$scope.totalPage){
+			$scope.pageNow=$scope.totalPage
+		}else{
+			$scope.pageNow++;
+			$http({
+				url: "http://47.88.16.225:411/kehu/",
+				method: "get",
+				data: {}
+			}).then(function(data) {
+				var cusArr = [];
+				var data2 = data.data;
+				for(var i=0; i<data2.length; i++){
+					if(data2[i].zhixingren == "public"){
+				      cusArr.push(data2[i]);
+				    }
+				}
+				$scope.pageNow=1;
+				$scope.totalPage=Math.ceil(cusArr.length/$scope.page);
+				$scope.tiao = cusArr.length;
+				$scope.arr = cusArr;
+				$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
+			})			
+		}		
+	}
 //保存
    $scope.chu=function(){
 // 		$scope.gb=false;
@@ -378,5 +304,42 @@ $scope.prev=function(){
 				$(this).next().html('请输入正确格式').css("color", "red");
 			}
 		})	
+		
+		
+		
+//分页
+//	$http({
+//		url:"http://47.88.16.225:411/kehu",
+//		method:"get"
+//	}).then(function(req){
+////		$scope.pageNow=1;
+////		$scope.totalPage=Math.ceil(req.data.length/$scope.page);
+////		$scope.tiao = req.data.length;
+//		$scope.arr = req.data;
+////		$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
+//	},function(){
+//		console.log("请求失败");
+//	})		
+   //放入客户管理
+//	$scope.gonghai = function(id, obj){
+//		$http({
+//			url:"http://47.88.16.225:411/kehu/" + id,
+//			method:"put",
+//			data: {
+//				"duiyingkehu": obj.duiyingkehu,
+//				"lianxineirong": obj.lianxineirong,
+//				"lianxiriqi":  obj.lianxiriqi,
+//				"lianxiren":  obj.lianxiren,
+//				"zhixingren":  "a123456",
+//				"tel": obj.tel
+//			}
+//		}).then(function(req){
+//			alert(req)
+//		},function(){
+//			console.log("修改失败！");
+//		})
+//	}		
+   
+   
    
 }]);
