@@ -229,55 +229,56 @@ margin-top: 6px;
 .mrx_j_b_q button{
 	margin-left: 45%;
 }
-
-.m_main_bottom-top-right{
+/*查询*/
+.m_main_bottom-top-right_b_r{
 	width: 30%;
 	height: 28px;
 	float: right;
 }
-.m_main_bottom-top-right_m{
+.m_main_bottom-top-right_b_r_m{
 	width: 200px;
 	height: 28px;
 	float: left;
 	display: inline-block;
 	
 }
-.m_main_bottom-top-right_m select{
+.m_main_bottom-top-right_b_r_m select{
 	margin-top: 5px;
 	color: #525252;
 	font-size: 12px;
 	line-height: 2px;
 }
-.m_main_bottom-top-right_x{
+.m_main_bottom-top-right_b_r_x{
 	width: 100px;
 }
-.m_main_bottom-top-right_g{
+.m_main_bottom-top-right_b_r_g{
 	width: 90px;
 }
-.m_main_bottom-top-right_q{
+.m_main_bottom-top-right_b_r_q{
 	width: 60px;
 	height: 28px;
 	margin-left: 3px;
 	float: left;
 }
-.m_main_bottom-top-right_q p{
+.m_main_bottom-top-right_b_r_q p{
 	width: 60px;
 	height: 20px;
 	margin-top: 3px;
 	line-height: 20px;
 }
-.m_main_bottom-top-right_q p span{
+.m_main_bottom-top-right_b_r_q p span{
 	padding-left: 4px;
 }	
-.m_main_bottom-top-right_q p:hover{
+.m_main_bottom-top-right_b_r_q p:hover{
 	border: 1px solid #ccc;
   border-radius: 2px;
 	background: -webkit-linear-gradient(top, #fff, #88bced);
 }
-.m_main_bottom-top-right_q p span img{
+.m_main_bottom-top-right_b_r_q p span img{
 	float: left;
 	margin: 1px;
 }
+/*查询*/
 
 .m_main_table{
 	width: 1088px;
@@ -447,7 +448,7 @@ border-bottom-right-radius: 5px;
 	position: fixed;
 	left:40%;
 	top: 55%;
-	background: rgb(250,250,250);
+	background: #CCCCCC;
 	box-shadow: 3px 3px 4px #000; 
 	border: 1px solid #CCCCCC;  
 }

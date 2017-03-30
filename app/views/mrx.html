@@ -10,10 +10,9 @@
 	<span  ng-click="fp()">批量分配</span>
 	</a>						
 	</div>
-	<!--m_main_bottom-top-right-->
-	<div class="m_main_bottom-top-right">
-					<div class="m_main_bottom-top-right_m">
-						<select id="ss" class="m_main_bottom-top-right_x" ng-model="classifies">
+<div class="m_main_bottom-top-right_b_r">
+					<div class="m_main_bottom-top-right_b_r_m">
+						<select id="ss" class="m_main_bottom-top-right_b_r_x" ng-model="classifies">
 							<option value="1">搜索</option>
 							<option value="2">客户阶段</option>
 							<option value="3">名称</option>
@@ -21,17 +20,14 @@
 							<option value="5">客户类型</option>
 							<option value="6">标签</option>
 						<select>
-						<select id="cs" class="m_main_bottom-top-right_g"></select>
+						<select id="cs" class="m_main_bottom-top-right_b_r_g"></select>
 					</div>
-					<div class="m_main_bottom-top-right_q">
-						<p ng-click="btn()">
-							<span>
-								<img src="../images/yrk7.png"/>
-							</span>查询
-						</p>
+					<div class="m_main_bottom-top-right_b_r_q">
+						<p ng-click="btn()"><span><img src="../images/yrk7.png"/></span>查询</p>
 					</div>
 					
 				</div>
+	
 	</div>	
 <table class="m_main_table" border="1" cellpadding="0" cellspacing="0" bordercolor="#d8d7d3">
 			<tr height="35px" bgcolor="#98ea98">
@@ -154,11 +150,11 @@
 							<option value="女">女</option>
 						</select>
 				</p>
-				<p><span>电话：</span><input type="text"     ng-model="mrx.dianhua" /></p>
+				<p><span>电话：</span><input type="text"     ng-model="mrx.dianhua" id="dianhua" placeholder="请输入客户电话" /><d>*</d></p>
 				<p><span>执行人：</span><input type="text"   ng-model="mrx.zhixingren" /></p>
 				<p><span>QQ：</span><input type="text"      ng-model="mrx.qq" /></p>
-				<p><span>邮箱：</span><input type="text"    ng-model="mrx.email" /></p>
-				<p><span>联系日期：</span><input type="" ng-model="mrx.lianxiriqi"/></p><!--class="Wdate" onFocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyyMMdd'})"-->
+				<p><span>邮箱：</span><input type="text"    ng-model="mrx.email"  id="email" placeholder="请输入邮箱地址"/><d>*</d></p>
+				<p><span>联系日期：</span><input type="text" ng-model="mrx.lianxiriqi"/></p><!--class="Wdate" onFocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyyMMdd'})"-->
 				<p><span>生日：</span><input type="text" ng-model="mrx.shengri" /></p>
 				<p><span>职位：</span><input type="text" ng-model="mrx.zhiwei" /></p>
 				<p><span>对应客户：</span><input type="text" ng-model="mrx.duiyingkehu" /></p>

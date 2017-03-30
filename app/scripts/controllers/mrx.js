@@ -27,12 +27,12 @@ angular.module('lytappApp')
 	   	
 		$scope.fp=function(){ 
 			if(!$scope.iCkeck&&$scope.aa!=true){
-		 		 alert("请先选择数据");		 		 
-//		 		 $scope.zhez=true;
-//					$(".zhe").text("请先选择数据");
-//					$scope.shanshan=function(){
-//						$scope.zhez=false;
-//				};
+		 		// alert("请先选择数据");		 		 
+		 		 $scope.zhez=true;
+					$(".zhe").text("请先选择数据");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
 		 		 
 		   }else{			
 				$scope.gb=true; 
@@ -54,19 +54,19 @@ angular.module('lytappApp')
 				_method:"delete"
 			}
 		}).then(function(req){
-//			 $scope.zhez=true;
-//					$(".zhe").text("删除成功");
-//					$scope.shanshan=function(){
-//						$scope.zhez=false;
-//				};		
-			alert("删除成功")
+			 $scope.zhez=true;
+					$(".zhe").text("删除成功");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};		
+			//alert("删除成功")
 			location.reload();
 		},function(){
 			console.log("修改失败！");
 		})
 	 }
 //查询	 
-	var arr1=[
+	 var arr1=[
             ['储备客户','潜在客户','成交客户','目标客户'],
             [''],
 		        ['初期','中期','处理异议'],
@@ -77,6 +77,8 @@ angular.module('lytappApp')
 		var a=$('#ss').val();
 		fn(a)
 	})	
+	
+	//ww
 	function fn(x){
 		$('#cs').empty();
 		for(var i=0;i<arr1[x-2].length;i++){
@@ -90,8 +92,8 @@ angular.module('lytappApp')
 	}
 	
 	$scope.btn=function(e){
-		$scope.classes = angular.element(".m_main_bottom-top-right_x").val();
-		$scope.context = angular.element(".m_main_bottom-top-right_g").val();
+		$scope.classes = angular.element(".m_main_bottom-top-right_b_r_x").val();
+		$scope.context = angular.element(".m_main_bottom-top-right_b_r_g").val();
 		if($scope.classes == 1){
 			$scope.classes = "搜索";
 		}else if($scope.classes == 2){
@@ -110,9 +112,9 @@ angular.module('lytappApp')
 		$scope.objStr = '{"'+classes+'":"'+context+'"}';
 		var objStr = $scope.objStr;
 		$scope.obj = JSON.parse(objStr);
-		$scope.arr = $filter("filter")($scope.arr, $scope.obj);
+		$scope.arr = $filter("filter")($scope.dataArr, $scope.obj);
 	}	
-
+	
 	//编辑
 			$scope.bbbb=false;
 			$scope.xiugai=function(e){
@@ -122,15 +124,15 @@ angular.module('lytappApp')
 				method:"get",
 				data:{}
 			}).then(function(e){
-//				console.log(e)
+				console.log(e)
 				$scope.mrx=e.data;
 			},function(){
-//				 $scope.zhez=true;
-//					$(".zhe").text("请求失败");
-//					$scope.shanshan=function(){
-//						$scope.zhez=false;
-//				};
-				alert("请求失败")
+				 $scope.zhez=true;
+					$(".zhe").text("请求失败");
+					$scope.shanshan=function(){
+						$scope.zhez=false;
+				};
+				//alert("请求失败")
 			})			
 			$scope.bbbb=true;
 			//确认修改
@@ -320,4 +322,24 @@ angular.module('lytappApp')
 			console.log("修改失败！");
 		})
 	}
+   
+   //手机验证
+		var dianhua = /^((\+)?86|((\+)?86)?)0?1[3458]\d{9}$/; 
+		$("#dianhua").blur(function() {
+			if($(this).val().match(dianhua)) {
+				$(this).next().html('√').css("color", "green");
+			} else {
+				$(this).next().html('请输入正确格式').css("color", "red");
+			}
+		})
+	//邮箱验证
+		var email = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+		$("#email").blur(function() {
+			if($(this).val().match(email)) {
+				$(this).next().html('√').css("color", "green");
+			} else {
+				$(this).next().html('请输入正确格式').css("color", "red");
+			}
+		})	
+   
 }]);
