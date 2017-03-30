@@ -10,10 +10,21 @@
 angular.module('lytappApp')
   .controller('yrkCtrl',["$scope","$http","myServe","$filter", function ($scope,$http,myServe,$filter) {
 	$scope.bool = true;
-	$scope.kehu="客户";
 	$http({
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+			url: "http://47.88.16.225:411/kehu/",
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 			url: 'http://47.88.16.225:411/kehu/',
 			url: 'http://47.88.16.225:411/kehu/?{"shi":"客户"}',
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 			method: "get",
 			data: {}
 		}).then(function(data) {
@@ -32,7 +43,7 @@ angular.module('lytappApp')
 	
 	$scope.xuezhe=function(){
 		$http({
-			url: 'http://47.88.16.225:411/kehu/?{"shi":"客户"}',
+			url: "http://47.88.16.225:411/kehu/",
 			method: "get",
 			data: {}
 		}).then(function(data) {
