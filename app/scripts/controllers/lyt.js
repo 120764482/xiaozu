@@ -97,8 +97,6 @@ angular.module('lytappApp')
 //				console.log(localStorage.userName)
 //				console.log(localStorage.passWord)
 				$state.go("lytdl")
-			},function(){
-				alert("注册失败")
 			})
 
 		}

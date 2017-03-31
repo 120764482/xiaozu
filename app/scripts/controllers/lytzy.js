@@ -22,5 +22,8 @@ angular.module('lytappApp')
 			localStorage.clear();
 			sessionStorage.clear();    
 			$location.url('/lytdl');  
+			if(localStorage.userName==""&&localStorage.passWord==""){
+				$location.url('/lytdl')
+			}
 		}
 	}])
