@@ -1,6 +1,9 @@
 <link rel="stylesheet" type="text/css" href="../styles/lz.css" />
 <div ng-controller="lzCtrl" class="lBox">
-
+     <div class="zhe" ng-show="zhez">
+		<p class="con">{{neirong}}</p>
+		<p class="btn" ng-click="btnn()" >确定</p>
+	</div>
 	<header>
 		联系人管理   
 	</header>
@@ -133,8 +136,8 @@
 										<p>类型</p>
 									</div>
 									<div>
-										<input type="radio" ng-value="lianxiren" ng-model="leixing" name="selectState" />联系人
-										<input type="radio" ng-value="kehu" ng-model="leixing" name="selectState" />客户
+										<input type="radio" ng-value="lianxiren" ng-model="leixing"  />联系人
+										<input type="radio" ng-value="kehu" ng-model="leixing"  />客户
 									</div>
 								</li>
 								<li>
