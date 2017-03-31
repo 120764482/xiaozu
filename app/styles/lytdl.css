@@ -120,9 +120,10 @@ img {
 	animation: load2 2s infinite ease;
 }
 .lytdl-wrap{
-	width: 1360px;
-	height: 665px;
-	background: url(../images/lytdl1.jpg);
+	width: 100vw;
+	height: 100vh;
+	background-size:cover ;
+	background: url(../images/lytdl1.jpg) no-repeat;
 }
 .lytdl-contet{
 	width: 909px;
