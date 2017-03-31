@@ -12,13 +12,10 @@ angular.module('lytappApp')
 	$scope.bool = true;
 	$scope.kehu="客户";
 	$http({
-<<<<<<< HEAD
 			url: "http://47.88.16.225:411/kehu/",
 			url: 'http://47.88.16.225:411/kehu/',
 			url: 'http://47.88.16.225:411/kehu/?{"shi":"客户"}',
-=======
 			url: 'http://47.88.16.225:411/kehu/',
->>>>>>> origin/master
 			method: "get",
 			data: {}
 		}).then(function(data) {
