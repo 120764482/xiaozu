@@ -9,29 +9,30 @@
 	<img src="../images/m_pl.jpg">
 	<span  ng-click="fp()">批量分配</span>
 	</a>						
-	</div>
-	<div class="m_main_bottom-top-right">
-		<select>
-		<option>客户阶段</option>
-		<option>客户类型</option>  
-		<option>营销阶段</option>
-		<option>所在公司</option>
-		<option>标签</option>
-		</select>    
-		
-		
-		
-		<input type="text"   value="" ng-focus="focus()" ng-blur="oblur()" ng-model="omingcheng"/> 
-		<div class="sousu" ng-click="cha"> 
-			<img src="../images/m_so.jpg">
-		  <!-- <a>查询</a>-->
-		</div>
-	</div>
+	</div>  
+<div class="m_main_bottom-top-right_b_r">
+					<div class="m_main_bottom-top-right_b_r_m">
+						<select id="ss" class="m_main_bottom-top-right_b_r_x" ng-model="classifies">
+							<option value="1">搜索</option>
+							<option value="2">客户阶段</option>
+							<option value="3">名称</option>
+							<option value="4">营销阶段</option>
+							<option value="5">客户类型</option>
+							<option value="6">标签</option>
+						<select>
+						<select id="cs" class="m_main_bottom-top-right_b_r_g"></select>
+					</div>
+					<div class="m_main_bottom-top-right_b_r_q">
+						<p ng-click="btn()"><span><img src="../images/yrk7.png"/></span>查询</p>
+					</div>
+					
+				</div>
+	
 	</div>	
 <table class="m_main_table" border="1" cellpadding="0" cellspacing="0" bordercolor="#d8d7d3">
 			<tr height="35px" bgcolor="#98ea98">
 				<td width="45">
-				<input type="checkbox"  ng-click="checkAll()">
+				<input type="checkbox"  ng-click="checkAll()" >
 				</td>
 				<td width="129">客户阶段</td>
 				<td width="129">营销阶段</td>
@@ -44,7 +45,7 @@
 			</tr>           
 			<tr height="35px" ng-repeat="emp in arr |filter:{yingxiaojieduan:omingcheng} " > 
 				<td width="45">
-					<input type="checkbox" ng-checked="iCkeck" index="{{aa}}" ng-click="cli()"/>
+					<input type="checkbox" name="sels" ng-model="sels" ng-checked="iCkeck" ng-click="cli(sels,emp.id)" aa="{{emp.id}}"/>
 					
 				</td>
 				<td width="129">{{emp.jieduan}}</td>
@@ -95,12 +96,12 @@
 		
 			<div class="hezi-div">选择负责人</div>
 			<div class="hezi-select">
-				<select>
-				<option>李艳天</opction>
-				<option>梁震</option>
-				<option>马瑞雪</option>
-				<option>王欣</option>
-				<option>闫锐锟</option>
+				<select ng-model="sele" ng-change="sel(sele)">
+				<option value="李艳天">李艳天</opction>
+				<option value="梁震">梁震</option>
+				<option value="马瑞雪">马瑞雪</option>
+				<option value="4">王欣</option>
+				<option value="5">闫锐锟</option>
 				</select>
 			</div>
 		</div>
@@ -139,18 +140,21 @@
 					<select name="" ng-model="mrx.leixing">
 							<option value="个人客户">个人客户</option>
 							<option value="团队客户">团队客户</option>
+							<option value="分销商">分销商</option>
+							<option value=">代理商商">代理商</option>
 						</select></p>
 				<p><span>姓名：</span><input type="text"     ng-model="mrx.xingming" /></p>
-				<p><span>性别：</span><input type="text"     ng-model="mrx.xingbie" /></p>
-				<p><span>电话：</span><input type="text"     ng-model="mrx.dianhua" /></p>
+				<p><span>性别：</span>
+					<select name="" ng-model="mrx.xingbie">
+							<option value="男">男</option>
+							<option value="女">女</option>
+						</select>
+				</p>
+				<p><span>电话：</span><input type="text"     ng-model="mrx.dianhua" id="dianhua" placeholder="请输入客户电话" /><d>*</d></p>
 				<p><span>执行人：</span><input type="text"   ng-model="mrx.zhixingren" /></p>
 				<p><span>QQ：</span><input type="text"      ng-model="mrx.qq" /></p>
-				<p><span>邮箱：</span><input type="text"    ng-model="mrx.email" /></p>
-<<<<<<< HEAD
-				<p><span>联系日期：</span><input type="text" ng-model="mrx.lianxiriqi" /></p>
-=======
+				<p><span>邮箱：</span><input type="text"    ng-model="mrx.email"  id="email" placeholder="请输入邮箱地址"/><d>*</d></p>
 				<p><span>联系日期：</span><input type="text" ng-model="mrx.lianxiriqi"/></p><!--class="Wdate" onFocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyyMMdd'})"-->
->>>>>>> origin/master
 				<p><span>生日：</span><input type="text" ng-model="mrx.shengri" /></p>
 				<p><span>职位：</span><input type="text" ng-model="mrx.zhiwei" /></p>
 				<p><span>对应客户：</span><input type="text" ng-model="mrx.duiyingkehu" /></p>
@@ -159,8 +163,12 @@
 				<p><span>日期：</span><input type="text" ng-model="mrx.data" /></p>
 				<p><span>标签：</span>
 				<select name=""  ng-model="mrx.biaoqian">
-							<option value="已联系">已联系</option>
 							<option value="未联系">未联系</option>
+							<option value="已沟通">已沟通</option>
+							<option value="已报价">已报价</option>
+							<option value="已成交">已成交</option>
+							<option value="已签合同">已签合同</option>
+							<option value="已做方案">已做方案</option>
 						</select></p>
 				</div>
 				
