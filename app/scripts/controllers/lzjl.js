@@ -57,35 +57,75 @@ angular.module('lytappApp')
 			})
 		} 
 		 //保存
+//		 $scope.yues == '';
+//		 $scope.oninas == '';
+//		 $scope.ris =="";
+//		 $scope.user_neirong=="";
+//		 $scope.user_neirong=="";
+//		 $scope.user_lianxiren=="";
+//		 $scope.zhixingren=="";
+//		 $scope.jobphone=="";
+//		 $scope.lianxijilu=="";
+		 
 		 $scope.baocunr = function() {
-		 	var arys = $scope.oninas+ '年' +$scope.yues+'月'+$scope.ris+"日"
-			$http({
-				url: "http://47.88.16.225:411/kehu/?uid=" + localStorage.uid,
-				method: "post",
-				data: {
-					"username": localStorage.userName,
-					"password": localStorage.passWord,
-					"duiyingkehu": $scope.duiyingkehu,
-					"lianxineirong": $scope.user_neirong,
-					"lianxiriqi":  arys,
-					"lianxiren":  $scope.user_lianxiren,
-					"zhixingren":  $scope.zhixingren,
-					"tel": $scope.jobphone,
-					"shi":$scope.lianxijilu
+		 	if($scope.yues == '' || $scope.oninas == ''||$scope.ris==''){
+					alert('请填写信息')
+					return;
 				}
-			}).then(function(data) {
-				window.location.reload()
-			})
+				var arys = $scope.oninas+ '年' +$scope.yues+'月'+$scope.ris+'日'
+				console.log(arys)
+//				if($scope.duiyingkehu || $scope.user_neirong || $scope.jobphone  || $scope.user_lianxiren  ||$scope.zhixingren  ||$scope.lianxijilu !== "") {
+//					alert("请填写信息");
+//				} else {
+				$http({
+					url: "http://47.88.16.225:411/kehu/?uid=" + localStorage.uid,
+					method: "post",
+					data: {
+						"username": localStorage.userName,
+						"password": localStorage.passWord,
+						"duiyingkehu": $scope.duiyingkehu,
+						"lianxineirong": $scope.lianxineirong,
+						"lianxiriqi":  $scope.lianxiriqi,
+						"lianxiren":  $scope.lianxiren,
+						"zhixingren":  $scope.zhixingren,
+						"tel": $scope.tel,
+						"shi":$scope.lianxijilu
+					}
+				}).then(function(data) {
+					console.log(data)
+					window.location.reload()
+				})
+		 	//}
+		 	
 
 			$scope.rise = false;
 
 		}
+		 
+		 
+		 
+		
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
 		 //查询
 		 $scope.cha = function() {
 			$http({
-				url: "http://47.88.16.225:411/kehu?tel=" + $scope.oPhone, //$scope.oPhone
+				url: 'http://47.88.16.225:411/kehu?{"shi":"联系记录"}'+'&tel=' + $scope.oPhone, //$scope.oPhone
 				method: "get"
 			}).then(function(data) {
+				$scope.tiaoo=data.data.length
 				$scope.arr = data.data
 			})
 		}
@@ -95,7 +135,7 @@ angular.module('lytappApp')
 			timers = setInterval(function(){
 				if($scope.oPhone == ''){
 					$http({
-						url: "http://47.88.16.225:411/kehu/",
+						url: 'http://47.88.16.225:411/kehu/?{"shi":"联系记录"}',
 						method: "get",
 						data: {}
 					}).then(function(data) {
@@ -118,9 +158,9 @@ angular.module('lytappApp')
 		 
 		 //上一页  下一页
 		 $http({
-			url:"http://47.88.16.225:411/kehu"
-			,type:"get"
-			
+			url: 'http://47.88.16.225:411/kehu/?{"shi":"联系记录"}',
+			method: "get",
+			data:{}
 		}).then(function(req){
 			$scope.totalPage=Math.ceil(req.data.length/$scope.page);
 		},function(){
@@ -133,10 +173,11 @@ angular.module('lytappApp')
 			}else{
 				$scope.pageNow--;
 				$http({
-					url: "http://47.88.16.225:411/kehu/",
+					url: 'http://47.88.16.225:411/kehu/?{"shi":"联系记录"}',
 					method: "get",
 					data: {}
 				}).then(function(data) {
+					
 					$scope.tiaoo = data.data.length;
 					$scope.arr = data.data;
 					$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
@@ -152,10 +193,11 @@ angular.module('lytappApp')
 			}else{
 				$scope.pageNow++;
 				$http({
-					url: "http://47.88.16.225:411/kehu/",
+					url: 'http://47.88.16.225:411/kehu/?{"shi":"联系记录"}',
 					method: "get",
 					data: {}
 				}).then(function(data) {
+					console.log(data.data)
 					$scope.tiaoo = data.data.length;
 					$scope.arr = data.data;
 					$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);

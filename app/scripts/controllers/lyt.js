@@ -20,7 +20,7 @@ angular.module('lytappApp')
 				$(this).next().html('请输入正确格式').css("color", "red");
 			}
 		})
-		var psd = /^[a-zA-Z]\w{5,17}$/; //密码验证
+		var psd = /^\w{5,17}$/; //密码验证
 		$("#psd").blur(function() {
 			if($(this).val().match(psd)) {
 				$(this).next().html('密码正确').css("color", "green");

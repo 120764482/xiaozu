@@ -87,7 +87,7 @@ angular.module('lytappApp')
 		$scope.oninas = '';
 		//添加
 		$scope.baocun = function() {
-			console.log($scope.emialaddr)
+			//console.log($scope.emialaddr)
 				if($scope.yues == '' || $scope.oninas == ''){
 					alert('请填写信息')
 					return;
@@ -119,9 +119,26 @@ angular.module('lytappApp')
 
 				$scope.rise = false;
 			}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 			//遍历  
 		$http({  
-			url: 'http://47.88.16.225:411/kehu/?{"shi":"联系人"}',
+			url: 'http://47.88.16.225:411/kehu?{"shi":"联系人"}',
 			method: "get",
 			data: {}
 		}).then(function(data) {
@@ -136,7 +153,7 @@ angular.module('lytappApp')
 			timers = setInterval(function(){
 				if($scope.oPhone == ''){
 					$http({
-						url: "http://47.88.16.225:411/kehu/",
+						url: 'http://47.88.16.225:411/kehu?{"shi":"联系人"}',
 						method: "get",
 						data: {}
 					}).then(function(data) {
@@ -167,9 +184,10 @@ angular.module('lytappApp')
 		//查询
 		$scope.cha = function() {
 			$http({
-				url: "http://47.88.16.225:411/kehu?dianhua=" + $scope.oPhone, //$scope.oPhone
+				url: 'http://47.88.16.225:411/kehu?{"shi":"联系人"}'+'&dianhua=' + $scope.oPhone, //$scope.oPhone
 				method: "get"
 			}).then(function(data) {
+				$scope.tiao=data.data.length
 				$scope.ary = data.data
 			})
 		}
@@ -178,7 +196,7 @@ angular.module('lytappApp')
 		
 			//上一页  下一页
 		$http({
-			url: "http://47.88.16.225:411/kehu",
+			url: 'http://47.88.16.225:411/kehu?{"shi":"联系人"}',
 			type: "get"
 
 		}).then(function(req) {
@@ -193,7 +211,7 @@ angular.module('lytappApp')
 			} else {
 				$scope.pageNow--;
 				$http({
-					url: "http://47.88.16.225:411/kehu/",
+					url: 'http://47.88.16.225:411/kehu/?{"shi":"联系人"}',
 					method: "get",
 					data: {}
 				}).then(function(data) {
@@ -212,10 +230,11 @@ angular.module('lytappApp')
 			} else {
 				$scope.pageNow++;
 				$http({
-					url: "http://47.88.16.225:411/kehu/",
+					url: 'http://47.88.16.225:411/kehu/?{"shi":"联系人"}',
 					method: "get",
 					data: {}
 				}).then(function(data) {
+					
 					$scope.tiao = data.data.length;
 					$scope.ary = data.data;
 					$scope.ary = $scope.ary.slice(($scope.pageNow - 1) * $scope.page, $scope.pageNow * $scope.page);
