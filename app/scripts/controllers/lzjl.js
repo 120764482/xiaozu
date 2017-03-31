@@ -15,7 +15,14 @@ angular.module('lytappApp')
 		$scope.totalPage=0;
 		//遍历
 		
-		
+		var phone = /^((\+)?86|((\+)?86)?)0?1[3458]\d{9}$/;
+		$("#jobphone").blur(function() {
+
+			var passValuee = $('#jobphone').val();
+			if(!phone.test(passValuee)) {
+				alert('请输入正确格式')
+			} 
+		})
 		 $scope.arr = [];
 		 $http({
 			url: 'http://47.88.16.225:411/kehu/?{"shi":"联系记录"}',
