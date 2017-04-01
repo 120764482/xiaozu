@@ -170,6 +170,8 @@ angular.module('lytappApp')
 		}
 
 		//删除
+		$scope.zhez = false;
+		$scope.neirong = "";
 		$scope.deler = function(a, $index) {
 			$http({
 				url: "http://47.88.16.225:411/kehu/" + a,
@@ -177,7 +179,13 @@ angular.module('lytappApp')
 
 			}).then(function(data) {
 				$scope.ary.splice($index, 1);
-				window.location.reload()
+				 $scope.zhez=true;
+				   	$scope.neirong = "删除成功";
+				   	 $scope.btnn = function(){
+				   	 	$scope.zhez = false;
+				   	 	window.location.reload()
+				   	 }
+
 			})
 		}
 

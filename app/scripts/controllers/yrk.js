@@ -12,10 +12,7 @@ angular.module('lytappApp')
 	$scope.bool = true;
 	$scope.kehu="客户";
 	$http({
-			url: "http://47.88.16.225:411/kehu/",
-			url: 'http://47.88.16.225:411/kehu/',
 			url: 'http://47.88.16.225:411/kehu/?{"shi":"客户"}',
-			url: 'http://47.88.16.225:411/kehu/',
 			method: "get",
 			data: {}
 		}).then(function(data) {
@@ -225,7 +222,8 @@ angular.module('lytappApp')
 								"lianxineirong":$scope.lianxineirong,
 								"lianxiren":$scope.lianxiren,
 								"data":$scope.data,
-								"biaoqian":$scope.biaoqian
+								"biaoqian":$scope.biaoqian,
+								"shi":$scope.leixin
 							}
 						}).then(function(data) {
 							window.location.reload()
