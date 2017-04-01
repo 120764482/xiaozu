@@ -303,7 +303,7 @@ angular.module('lytappApp')
 	
 	//分页
 	$http({
-		url:"http://47.88.16.225:411/kehu",
+		url: 'http://47.88.16.225:411/kehu/?{"shi":"客户"}',
 		method:"get"
 	}).then(function(req){
 		$scope.totalPage=Math.ceil(req.data.length/$scope.page);
@@ -317,7 +317,7 @@ angular.module('lytappApp')
 		}else{
 			$scope.pageNow--;
 			$http({
-				url: "http://47.88.16.225:411/kehu/",
+				url: 'http://47.88.16.225:411/kehu/?{"shi":"客户"}',
 				method: "get",
 				data: {}
 			}).then(function(data) {
@@ -335,7 +335,7 @@ angular.module('lytappApp')
 		}else{
 			$scope.pageNow++;
 			$http({
-				url: "http://47.88.16.225:411/kehu/",
+				url: 'http://47.88.16.225:411/kehu/?{"shi":"客户"}',
 				method: "get",
 				data: {}
 			}).then(function(data) {
