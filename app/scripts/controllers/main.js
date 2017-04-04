@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name 123App.controller:MainCtrl
+ * @name lytappAppApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the 123App
+ * Controller of the lytappAppApp
  */
 angular.module('lytappApp')
   .controller('MainCtrl', function () {
