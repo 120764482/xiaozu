@@ -44,10 +44,11 @@ angular.module('lytappApp')
 	// 个人客户
 	$scope.xuezhek=function(){
 		$http({
-			url:'http://47.88.16.225:411/kehu/',
+			url:'http://47.88.16.225:411/kehu/?{"shi":"客户"}',
 			method:"get",
 			data:{}
 		}).then(function(data){
+			
 			var cusArr = [];
 			var data2 = data.data;
 			var us = localStorage.userName;

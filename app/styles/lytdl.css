@@ -121,9 +121,9 @@ img {
 }
 .lytdl-wrap{
 	width: 100vw;
-	height: 100vh;
-	background-size:cover ;
+	height: 100vh;	
 	background: url(../images/lytdl1.jpg) no-repeat;
+	background-size:cover ;
 }
 .lytdl-contet{
 	width: 909px;
