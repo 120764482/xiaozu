@@ -91,11 +91,11 @@ angular.module('lytappApp')
 	 }
 //查询	 
 	 var arr1=[
-            ['储备客户','潜在客户','成交客户','目标客户'],
+            ['储备客户','潜在客户','成交客户','目标客户','商机客户'],
             [''],
-		        ['初期','中期','处理异议'],
-		        ['个人客户','团队客户'],
-		        ['已沟通','未沟通']
+		    ['初期','中期','处理异议'],
+		    ['个人客户','团队客户'],
+		    ['已沟通','未沟通']
 	];
 	$('#ss').change(function(){
 		var a=$('#ss').val();
@@ -200,7 +200,7 @@ angular.module('lytappApp')
    		url:"http://47.88.16.225:411/kehu/",
    		method:"get"
    	}).then(function(data){
-   		
+   		$scope.dataArr = data.data;
    		var cusArr = [];
 		var data2 = data.data;
 		for(var i=0; i<data2.length; i++){
@@ -262,11 +262,11 @@ angular.module('lytappApp')
 				      cusArr.push(data2[i]);
 				    }
 				}
-				$scope.pageNow=1;
 				$scope.totalPage=Math.ceil(cusArr.length/$scope.page);
 				$scope.tiao = cusArr.length;
 				$scope.arr = cusArr;
 				$scope.arr=$scope.arr.slice(($scope.pageNow-1)*$scope.page,$scope.pageNow*$scope.page);
+				console.log($scope.arr);
 			})			
 		}		
 	}
