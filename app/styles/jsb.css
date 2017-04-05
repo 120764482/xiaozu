@@ -81,7 +81,7 @@
 	line-height: 30px;
 	text-align: center;
 	color: #00388b;
-	text-align: c;
+	text-align: center;
 	font-weight: bold;
 	font-size: 12px;
 	
@@ -95,7 +95,7 @@
 .wxbox .wxdiv2{
 	width: 1088px;
 	height: 36px;
-	background: ;
+	background: #BDE2EB;
 	border: 1px solid #93e497;
 	background: #f5f5f5;
 	margin-top: 2px;
